@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Prank_Sound_App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c82c8be19ac4b429d86a8be3e291dac646d74ebe")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c8bb52df13e0f8db4a9fdc5d124117c5bd3c0b47")]
 [assembly: System.Reflection.AssemblyProductAttribute("Prank_Sound_App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Prank_Sound_App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

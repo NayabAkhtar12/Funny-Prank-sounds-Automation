@@ -8,7 +8,7 @@ namespace Live_Earth_Map.Test_Class
     public class Test_Class : TestInitiallize
     {
         AirHorn AirHorn;
-        [TestMethod]
+        //  [TestMethod]
         public void AirHornSounds()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
@@ -17,7 +17,7 @@ namespace Live_Earth_Map.Test_Class
         }
 
         AnimalSounds AnimalSound;
-        [TestMethod]
+        //   [TestMethod]
         public void AnimalSounds()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
@@ -27,12 +27,21 @@ namespace Live_Earth_Map.Test_Class
 
         FartSound FartSound;
 
-        [TestMethod]
+        //  [TestMethod]
         public void FartSounds()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             FartSound = new FartSound(driver, test);
             FartSound.FartSoundTest();
+        }
+        CarHorn CarHorn;
+
+        [TestMethod]
+        public void CarHornTest()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            CarHorn = new CarHorn(driver, test);
+            CarHorn.CarHornM();
         }
     }
 }

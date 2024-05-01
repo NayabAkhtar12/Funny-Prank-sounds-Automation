@@ -21,8 +21,8 @@ namespace Live_Earth_Map.Pages
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
             {
-                FartSoundMenu.Click();
-                FartSound1.Click();
+                DoorBellMenu.Click();
+                DoorBell1.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -36,7 +36,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound2.Click();
+                DoorBell2.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -50,7 +50,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound3.Click();
+                DoorBell3.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -64,7 +64,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound4.Click();
+                DoorBell4.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -78,7 +78,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound5.Click();
+                DoorBell5.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -92,23 +92,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound6.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                FartSound7.Click();
+                DoorBell6.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -124,7 +108,23 @@ namespace Live_Earth_Map.Pages
 
             try
             {
-                FartSound8.Click();
+                DoorBell7.Click();
+                PlayButton.Click();
+                VolumeUp.Click();
+                VolumeDown.Click();
+                Loop.Click();
+                BackButton1.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred : " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+
+            }
+
+            try
+            {
+                DoorBell8.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -140,7 +140,7 @@ namespace Live_Earth_Map.Pages
 
             try
             {
-                FartSound9.Click();
+                DoorBell9.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -165,10 +165,19 @@ namespace Live_Earth_Map.Pages
                 Console.WriteLine("Exception occurred: " + ex.Message);
 
             }
-
             try
             {
-                FartSound10.Click();
+                IWebElement ScrolltoElement = driver.FindElement(MobileBy.AndroidUIAutomator(
+                  "new UiScrollable( new UiSelector ().scrollable(true))" +
+                  "scrollIntoView(new UiSelector().text (\"//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 10\"] \"))"));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+            }
+            try
+            {
+                DoorBell10.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -180,116 +189,21 @@ namespace Live_Earth_Map.Pages
                 Console.WriteLine("Exception occurred : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
-            }
-
-            try
-            {
-                FartSound11.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound12.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound13.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound14.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound15.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound16.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-
-            try
-            {
-                FartSound17.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
         }
 
-        public IWebElement FartSoundMenu => driver.FindElementByXPath("");
-        public IWebElement FartSound1 => driver.FindElementByXPath(" ");
+        public IWebElement DoorBellMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell\"]");
+        public IWebElement DoorBell1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 1\"]");
+        public IWebElement DoorBell2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 2\"]");
+        public IWebElement DoorBell3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 3\"]");
+        public IWebElement DoorBell4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 4\"]");
+        public IWebElement DoorBell5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 5\"]");
+        public IWebElement DoorBell6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 6\"]");
+        public IWebElement DoorBell7 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 7\"]");
+        public IWebElement DoorBell8 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 8\"]");
+        public IWebElement DoorBell9 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 9\"]");
+
+        public IWebElement DoorBell10 => driver.FindElementByXPath("");
 
         public IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
         public IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");

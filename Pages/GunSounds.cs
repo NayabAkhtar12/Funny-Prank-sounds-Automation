@@ -16,13 +16,13 @@ namespace Live_Earth_Map.Pages
             this.Test = test;
         }
 
-        public void FartSoundTest()
+        public void GunSoundsTest()
         {
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
             {
-                FartSoundMenu.Click();
-                FartSound1.Click();
+                GunSoundMenu.Click();
+                GunSound1.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -36,7 +36,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound2.Click();
+                GunSound2.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -50,7 +50,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound3.Click();
+                GunSound3.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -64,7 +64,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound4.Click();
+                GunSound4.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -78,7 +78,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound5.Click();
+                GunSound5.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -92,23 +92,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound6.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                FartSound7.Click();
+                GunSound6.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -124,7 +108,23 @@ namespace Live_Earth_Map.Pages
 
             try
             {
-                FartSound8.Click();
+                GunSound7.Click();
+                PlayButton.Click();
+                VolumeUp.Click();
+                VolumeDown.Click();
+                Loop.Click();
+                BackButton1.Click();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred : " + ex.Message);
+                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+
+            }
+
+            try
+            {
+                GunSound8.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -140,7 +140,7 @@ namespace Live_Earth_Map.Pages
 
             try
             {
-                FartSound9.Click();
+                GunSound9.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -158,7 +158,7 @@ namespace Live_Earth_Map.Pages
             {
                 IWebElement ScrollelementtoLast = driver.FindElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().text(\"Fart Sound 17\")) "));
+                ".scrollIntoView(new UiSelector().text(\"Gun 11\")) "));
             }
             catch (Exception ex)
             {
@@ -168,23 +168,7 @@ namespace Live_Earth_Map.Pages
 
             try
             {
-                FartSound10.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                FartSound11.Click();
+                GunSound10.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -199,7 +183,7 @@ namespace Live_Earth_Map.Pages
             }
             try
             {
-                FartSound12.Click();
+                GunSound11.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -212,84 +196,21 @@ namespace Live_Earth_Map.Pages
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
             }
-            try
-            {
-                FartSound13.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
-            }
-            try
-            {
-                FartSound14.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound15.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound16.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-
-            try
-            {
-                FartSound17.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
         }
 
-        public IWebElement FartSoundMenu => driver.FindElementByXPath("");
-        public IWebElement FartSound1 => driver.FindElementByXPath(" ");
+        public IWebElement GunSoundMenu => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[7]");
+        public IWebElement GunSound1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 1\"]");
+        public IWebElement GunSound2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 2\"]");
+        public IWebElement GunSound3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 3\"]");
+        public IWebElement GunSound4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 4\"]");
+        public IWebElement GunSound5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 5\"]");
+        public IWebElement GunSound6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 6\"]");
+        public IWebElement GunSound7 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 7\"]");
+        public IWebElement GunSound8 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 8\"]");
+        public IWebElement GunSound9 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 9\"]");
+        public IWebElement GunSound10 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 10\"]");
+        public IWebElement GunSound11 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 11\"]");
 
         public IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
         public IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
