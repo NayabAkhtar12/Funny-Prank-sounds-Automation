@@ -2,7 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 
-namespace Live_Earth_Map.Pages
+namespace Prank_Sound_App.Pages
 {
     class FartSound
     {

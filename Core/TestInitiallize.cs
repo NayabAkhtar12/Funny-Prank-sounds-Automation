@@ -4,7 +4,7 @@ using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 
-namespace Live_Earth_Map.Core
+namespace Prank_Sound_App.Core
 {
     public class TestInitiallize
     {

@@ -1,8 +1,8 @@
 ﻿using AventStack.ExtentReports;
-using Live_Earth_Map.Core;
-using Live_Earth_Map.Pages;
+using Prank_Sound_App.Core;
+using Prank_Sound_App.Pages;
 
-namespace Live_Earth_Map.Test_Class
+namespace Prank_Sound_App.Test_Class
 {
     [TestClass]
     public class Test_Class : TestInitiallize
