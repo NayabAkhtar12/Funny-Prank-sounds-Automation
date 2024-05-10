@@ -16,13 +16,13 @@ namespace Prank_Sound_App.Pages
             this.Test = test;
         }
 
-        public void FartSoundTest()
+        public void SleighBellSoundTest()
         {
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
             {
-                FartSoundMenu.Click();
-                FartSound1.Click();
+                SleighBellMenu.Click();
+                SleighBell1.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -36,7 +36,7 @@ namespace Prank_Sound_App.Pages
             }
             try
             {
-                FartSound2.Click();
+                SleighBell2.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -50,7 +50,7 @@ namespace Prank_Sound_App.Pages
             }
             try
             {
-                FartSound3.Click();
+                SleighBell3.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -64,7 +64,7 @@ namespace Prank_Sound_App.Pages
             }
             try
             {
-                FartSound4.Click();
+                SleighBell4.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -78,7 +78,7 @@ namespace Prank_Sound_App.Pages
             }
             try
             {
-                FartSound5.Click();
+                SleighBell5.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -92,23 +92,7 @@ namespace Prank_Sound_App.Pages
             }
             try
             {
-                FartSound6.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                FartSound7.Click();
+                SleighBell6.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -124,172 +108,31 @@ namespace Prank_Sound_App.Pages
 
             try
             {
-                FartSound8.Click();
+                SleighBell7.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
                 Loop.Click();
                 BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception Occured: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                FartSound9.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
                 BackButton1.Click();
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception occurred : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
-            }
-
-            try
-            {
-                IWebElement ScrollelementtoLast = driver.FindElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().text(\"Fart Sound 17\")) "));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred: " + ex.Message);
-
-            }
-
-            try
-            {
-                FartSound10.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                FartSound11.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound12.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound13.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound14.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound15.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                FartSound16.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-
-            try
-            {
-                FartSound17.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
         }
 
-        public IWebElement FartSoundMenu => driver.FindElementByXPath("");
-        public IWebElement FartSound1 => driver.FindElementByXPath(" ");
+        public IWebElement SleighBellMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell\"]");
+        public IWebElement SleighBell1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 1\"]");
+        public IWebElement SleighBell2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 2\"]");
+        public IWebElement SleighBell3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 3\"]");
+        public IWebElement SleighBell4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 4\"]");
+        public IWebElement SleighBell5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 5\"]");
+        public IWebElement SleighBell6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 6\"]");
+        public IWebElement SleighBell7 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 7\"]");
 
         public IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
         public IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");

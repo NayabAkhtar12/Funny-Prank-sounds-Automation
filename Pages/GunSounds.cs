@@ -189,6 +189,7 @@ namespace Prank_Sound_App.Pages
                 VolumeDown.Click();
                 Loop.Click();
                 BackButton1.Click();
+                BackButton1.Click();
             }
             catch (Exception ex)
             {

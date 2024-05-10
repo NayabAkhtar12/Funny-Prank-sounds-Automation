@@ -16,7 +16,7 @@ namespace Prank_Sound_App.Pages
             this.Test = test;
         }
 
-        public void FartSoundTest()
+        public void BurpSoundsTest()
         {
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
@@ -140,6 +140,8 @@ namespace Prank_Sound_App.Pages
 
             try
             {
+                //UI Scrollable
+
                 IWebElement ScrollelementtoLast = driver.FindElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true))" +
                 ".scrollIntoView(new UiSelector().text(\"Burp 12\")) "));
@@ -151,7 +153,6 @@ namespace Prank_Sound_App.Pages
             }
             try
             {
-                //UI Scrollable
                 BurpSound9.Click();
                 PlayButton.Click();
                 VolumeUp.Click();
@@ -205,6 +206,8 @@ namespace Prank_Sound_App.Pages
                 VolumeDown.Click();
                 Loop.Click();
                 BackButton1.Click();
+                BackButton1.Click();
+
             }
             catch (Exception ex)
             {

@@ -16,7 +16,7 @@ namespace Prank_Sound_App.Pages
             this.Test = test;
         }
 
-        public void FartSoundTest()
+        public void DoorBellTest()
         {
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
@@ -156,17 +156,6 @@ namespace Prank_Sound_App.Pages
 
             try
             {
-                IWebElement ScrollelementtoLast = driver.FindElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().text(\"Fart Sound 17\")) "));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred: " + ex.Message);
-
-            }
-            try
-            {
                 IWebElement ScrolltoElement = driver.FindElement(MobileBy.AndroidUIAutomator(
                   "new UiScrollable( new UiSelector ().scrollable(true))" +
                   "scrollIntoView(new UiSelector().text (\"//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 10\"] \"))"));
@@ -183,6 +172,8 @@ namespace Prank_Sound_App.Pages
                 VolumeDown.Click();
                 Loop.Click();
                 BackButton1.Click();
+                BackButton1.Click();
+
             }
             catch (Exception ex)
             {

@@ -16,12 +16,14 @@ namespace Prank_Sound_App.Pages
             this.Test = test;
         }
 
-        public void CarHornM()
+        public void CarHornTest()
         {
             //   ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
             {
                 CarHornTestXpath.Click();
+                //CarHornMenu.Click();
+
                 PlayButton.Click();
                 VolumeUp.Click();
                 VolumeDown.Click();
@@ -98,23 +100,13 @@ namespace Prank_Sound_App.Pages
                 VolumeDown.Click();
                 Loop.Click();
                 BackButton1.Click();
+                BackButton1.Click();
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception occurred : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-
-            try
-            {
-                IWebElement ScrollelementtoLast = driver.FindElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().text(\"Fart Sound 17\")) "));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred: " + ex.Message);
-
             }
 
         }

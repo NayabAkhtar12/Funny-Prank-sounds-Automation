@@ -16,9 +16,20 @@ namespace Prank_Sound_App.Pages
             this.Test = test;
         }
 
-        public void FartSoundTest()
+        public void HairDryerSoundTest()
         {
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
+            try
+            {
+                IWebElement ScrollelementtoLast = driver.FindElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))" +
+                ".scrollIntoView(new UiSelector().text(\"Other Sounds\")) "));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception occurred: " + ex.Message);
+
+            }
             try
             {
                 HairDryerMenu.Click();
@@ -130,6 +141,8 @@ namespace Prank_Sound_App.Pages
                 VolumeDown.Click();
                 Loop.Click();
                 BackButton1.Click();
+                BackButton1.Click();
+
             }
             catch (Exception ex)
             {

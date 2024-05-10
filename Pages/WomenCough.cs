@@ -16,7 +16,7 @@ namespace Prank_Sound_App.Pages
             this.Test = test;
         }
 
-        public void FartSoundTest()
+        public void WomenCoughSoundTest()
         {
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
@@ -55,6 +55,7 @@ namespace Prank_Sound_App.Pages
                 VolumeUp.Click();
                 VolumeDown.Click();
                 Loop.Click();
+                BackButton1.Click();
                 BackButton1.Click();
             }
             catch (Exception ex)
