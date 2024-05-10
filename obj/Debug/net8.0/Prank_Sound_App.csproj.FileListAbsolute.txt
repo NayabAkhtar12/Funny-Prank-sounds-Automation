@@ -148,6 +148,7 @@ D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.AssemblyInfoInputs.cache
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.AssemblyInfo.cs
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.csproj.CoreCompileInputs.cache
+D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.sourcelink.json
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.csproj.CopyComplete
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.dll
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\refint\Prank_Sound_App.dll

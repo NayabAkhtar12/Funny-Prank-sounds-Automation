@@ -26,7 +26,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking: " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
             try
@@ -41,7 +41,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking: " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
             try
@@ -55,7 +55,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
             try
@@ -69,7 +69,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
             try
@@ -83,7 +83,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
             try
@@ -97,7 +97,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
             try
@@ -127,7 +127,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
             }
@@ -143,7 +143,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
             }
@@ -159,7 +159,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
             }
             try
@@ -178,7 +178,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
             }
@@ -193,7 +193,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
             }
@@ -208,7 +208,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
             }
@@ -225,7 +225,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
+                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
                 Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
             }
