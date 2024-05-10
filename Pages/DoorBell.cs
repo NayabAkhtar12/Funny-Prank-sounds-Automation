@@ -18,7 +18,7 @@ namespace Prank_Sound_App.Pages
 
         public void DoorBellTest()
         {
-            ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
+            ExtentTest test = Extent.CreateTest("Report 1");
             try
             {
                 DoorBellMenu.Click();
