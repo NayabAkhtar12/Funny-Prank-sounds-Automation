@@ -1,209 +1,119 @@
 ﻿using AventStack.ExtentReports;
+using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 
 namespace Prank_Sound_App.Pages
 {
     class GunSounds
     {
-        private AppiumDriver<IWebElement> driver;
+        private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
+        private AdHelperC adHelper;
+
         //Constructor
-        public GunSounds(AppiumDriver<IWebElement> driver, ExtentTest test)
+        public GunSounds(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
+            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+
         }
 
-        public void GunSoundsTest()
+        public void GunSoundTest()
         {
-            ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
+            ExtentTest test = Extent.CreateTest("Gun Sound Test");
             try
             {
-                GunSoundMenu.Click();
-                GunSound1.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
+                // GunSoundMenu
+                try
+                {
+                    GunSoundMenu.Click();
+                    HandleAd();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Gun Sound Menu", ex);
+                }
+
+                // Gun Sound 1
+                try
+                {
+                    GunSound1.Click();
+                    HandleAd();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Gun Sound 1", ex);
+                }
+
+                // Gun Sound 2
+                try
+                {
+                    GunSound2.Click();
+                    HandleAd();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Gun Sound 2", ex);
+                }
+
+                // Gun Sound 3
+                try
+                {
+                    GunSound3.Click();
+                    HandleAd();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Gun Sound 3", ex);
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                HandleException("Gun Sound Test", ex);
             }
-            try
-            {
-                GunSound2.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                GunSound3.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                GunSound4.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                GunSound5.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                GunSound6.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                GunSound7.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                GunSound8.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception Occured: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                GunSound9.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                IWebElement ScrollelementtoLast = driver.FindElement(MobileBy.AndroidUIAutomator(
-                "new UiScrollable(new UiSelector().scrollable(true))" +
-                ".scrollIntoView(new UiSelector().text(\"Gun 11\")) "));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred: " + ex.Message);
-
-            }
-
-            try
-            {
-                GunSound10.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-            try
-            {
-                GunSound11.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
+        }
+        private void HandleException(string action, Exception ex)
+        {
+            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
+            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
         }
 
-        IWebElement GunSoundMenu => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[7]");
-        IWebElement GunSound1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 1\"]");
-        IWebElement GunSound2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 2\"]");
-        IWebElement GunSound3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 3\"]");
+        private void HandleAd()
+        {
+            if (adHelper.IsAdPresent())
+            {
+                if (adHelper.IsCrossButtonPresent())
+                {
+                    adHelper.HandleAdCrossButton();
+                }
+                else if (adHelper.IsCloseButtonPresent())
+                {
+                    adHelper.HandleAdCloseButton();
+                }
+                else
+                {
+                    Console.WriteLine("No Ad found");
+                }
+            }
+        }
+        IWebElement GunSoundMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun Sound\"]");
+        IWebElement GunSound1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun Sound 1\"]");
+        IWebElement GunSound2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun Sound 2\"]");
+        IWebElement GunSound3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun Sound 3\"]");
         IWebElement GunSound4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 4\"]");
         IWebElement GunSound5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 5\"]");
         IWebElement GunSound6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Gun 6\"]");
@@ -217,7 +127,8 @@ namespace Prank_Sound_App.Pages
         IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
         IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
         IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivPPCv");
+        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
+        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
 
     }
 }

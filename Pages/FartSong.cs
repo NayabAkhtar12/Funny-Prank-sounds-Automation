@@ -1,19 +1,25 @@
 ﻿using AventStack.ExtentReports;
+using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 
 namespace Prank_Sound_App.Pages
 {
     class FartSong
     {
-        private AppiumDriver<IWebElement> driver;
+        private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
+        private AdHelperC adHelper;
+
         //Constructor
-        public FartSong(AppiumDriver<IWebElement> driver, ExtentTest test)
+        public FartSong(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
+            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+
         }
 
         public void FartSongSoundTest()
@@ -233,7 +239,8 @@ namespace Prank_Sound_App.Pages
         IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
         IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
         IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivPPCv");
+        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
+        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
 
     }
 }

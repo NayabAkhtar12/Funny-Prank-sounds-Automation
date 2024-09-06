@@ -1,169 +1,211 @@
 ﻿using AventStack.ExtentReports;
+using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 
 namespace Prank_Sound_App.Pages
 {
     class AirHorn
     {
-        private AppiumDriver<IWebElement> driver;
+        private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
+        private AdHelperC adHelper;
+
         //Constructor
-        public AirHorn(AppiumDriver<IWebElement> driver, ExtentTest test)
+        public AirHorn(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
+            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+
         }
 
         public void AirHornSoundTest()
         {
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
+
             try
             {
                 AirHornMenu.Click();
+                try
+                {
+                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
+                    {
+                        adHelper.HandleAdCrossButton();
+                    }
+
+                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+
+                    {
+                        adHelper.HandleAdCloseButton();
+
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("No Ad found");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Air Horn Menu", ex);
+                }
+
+
                 AirHorn1.Click();
+
+                try
+                {
+                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
+                    {
+                        adHelper.HandleAdCrossButton();
+                    }
+
+                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+
+                    {
+                        adHelper.HandleAdCloseButton();
+
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("No Ad found");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Air Horn 1", ex);
+                }
+
+                //  Loop.Click();
+
                 PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
+                Thread.Sleep(3000);
+                // VolumeUp.Click();
+                //   VolumeDown.Click();
+                AddtoBookmark.Click();
+                driver.Navigate().Back();
+                //  Thread.Sleep(3000);
+
+                //Air Horn2
                 AirHorn2.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
+
+                try
+                {
+                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
+                    {
+                        adHelper.HandleAdCrossButton();
+                    }
+
+                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+
+                    {
+                        adHelper.HandleAdCloseButton();
+
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("No Ad found");
+                    }
+                    PlayButton.Click();
+                    Thread.Sleep(3000);
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Air Horn 2", ex);
+                }
+
+                //AirHorn3
                 AirHorn3.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
+
+                try
+                {
+                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
+                    {
+                        adHelper.HandleAdCrossButton();
+                    }
+
+                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+
+                    {
+                        adHelper.HandleAdCloseButton();
+
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("No Ad found");
+                    }
+                    PlayButton.Click();
+                    Thread.Sleep(3000);
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Air Horn 3", ex);
+                }
+
+
+                //AirHorn4
+
                 AirHorn4.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                AirHorn5.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                AirHorn6.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
-            }
+                try
+                {
+                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
+                    {
+                        adHelper.HandleAdCrossButton();
+                    }
 
-            try
-            {
-                AirHorn7.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
 
-            }
+                    {
+                        adHelper.HandleAdCloseButton();
 
-            try
-            {
-                AirHorn8.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                    }
 
-            }
+                    else
+                    {
+                        Console.WriteLine("No Ad found");
+                    }
+                    PlayButton.Click();
+                    Thread.Sleep(3000);
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
 
-            try
-            {
-                AirHorn9.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-                BackButton1.Click();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Air Horn 4", ex);
+                }
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
+                HandleException("Air Horn ", ex);
             }
         }
-
+        private void HandleException(string action, Exception ex)
+        {
+            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
+            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
+        }
         IWebElement AirHornMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Air Horn\"]");
 
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
+        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
         IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
         IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
         IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivPPCv");
+        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
         IWebElement AirHorn1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Air Horn 1\"]");
 
         IWebElement AirHorn2 => driver.FindElementByXPath("(//android.view.ViewGroup[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/content_container\"])[2]");

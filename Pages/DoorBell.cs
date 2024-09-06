@@ -1,185 +1,113 @@
 ﻿using AventStack.ExtentReports;
+using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 
 namespace Prank_Sound_App.Pages
 {
     class DoorBell
     {
-        private AppiumDriver<IWebElement> driver;
+        private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
+        private AdHelperC adHelper;
         //Constructor
-        public DoorBell(AppiumDriver<IWebElement> driver, ExtentTest test)
+        public DoorBell(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
+            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+
         }
 
-        public void DoorBellTest()
+        public void DoorBellSoundTest()
         {
-            ExtentTest test = Extent.CreateTest("Report 1");
+            ExtentTest test = Extent.CreateTest("Door Bell Sound Test");
             try
             {
-                DoorBellMenu.Click();
-                DoorBell1.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                DoorBell2.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                DoorBell3.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                DoorBell4.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                DoorBell5.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                DoorBell6.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                // DoorBellMenu
+                try
+                {
+                    DoorBellMenu.Click();
+                    HandleAd();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Door Bell Menu", ex);
+                }
 
-            }
+                // Door Bell 1
+                try
+                {
+                    DoorBell1.Click();
+                    HandleAd();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Door Bell 1", ex);
+                }
 
-            try
-            {
-                DoorBell7.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
+                // Door Bell 2
+                try
+                {
+                    DoorBell2.Click();
+                    HandleAd();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Door Bell 2", ex);
+                }
+
+                // Door Bell 3
+                try
+                {
+                    DoorBell3.Click();
+                    HandleAd();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    HandleException("Door Bell 3", ex);
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
+                HandleException("Door Bell Sound Test", ex);
             }
+        }
 
-            try
-            {
-                DoorBell8.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception Occured: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+        private void HandleException(string action, Exception ex)
+        {
+            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
+            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
+        }
 
-            }
-
-            try
+        private void HandleAd()
+        {
+            if (adHelper.IsAdPresent())
             {
-                DoorBell9.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                IWebElement ScrolltoElement = driver.FindElement(MobileBy.AndroidUIAutomator(
-                  "new UiScrollable( new UiSelector ().scrollable(true))" +
-                  "scrollIntoView(new UiSelector().text (\"//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Door Bell 10\"] \"))"));
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred: " + ex.Message);
-            }
-            try
-            {
-                DoorBell10.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-                BackButton1.Click();
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
+                if (adHelper.IsCrossButtonPresent())
+                {
+                    adHelper.HandleAdCrossButton();
+                }
+                else if (adHelper.IsCloseButtonPresent())
+                {
+                    adHelper.HandleAdCloseButton();
+                }
+                else
+                {
+                    Console.WriteLine("No Ad found");
+                }
             }
         }
 
@@ -200,7 +128,8 @@ namespace Prank_Sound_App.Pages
         IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
         IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
         IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivPPCv");
+        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
+        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
 
     }
 }
