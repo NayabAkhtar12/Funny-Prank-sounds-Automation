@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -12,6 +11,7 @@ namespace Prank_Sound_App.Pages
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
         private AdHelperC adHelper;
+        Reusablemethods Reusablemethods;
 
         //Constructor
         public OtherSounds(AppiumDriver<AndroidElement> driver, ExtentTest test)
@@ -19,156 +19,90 @@ namespace Prank_Sound_App.Pages
             this.driver = driver;
             this.Test = test;
             this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+            Reusablemethods = new Reusablemethods(driver, test);
 
         }
-
         public void OtherSoundsTest()
         {
-            ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
+            Reusablemethods.ScrollToElementByText("Other Sounds");
+            ExtentTest test = Extent.CreateTest("Other Sounds Test");
             try
             {
-                OtherSoundMenu.Click();
-                ClapSound.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                Camera.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                OpenDoor.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                DrumBeat.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                Call.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                Message.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                Hello.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-
-            try
-            {
-                Kiss.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception Occured: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
-            }
-        }
-        private void HandleAd()
-        {
-            if (adHelper.IsAdPresent())
-            {
-                if (adHelper.IsCrossButtonPresent())
+                // Other Sounds Menu
+                try
                 {
-                    adHelper.HandleAdCrossButton();
+                    OtherSoundMenu.Click();
+                    Reusablemethods.InterAdHandle();
                 }
-                else if (adHelper.IsCloseButtonPresent())
+                catch (Exception ex)
                 {
-                    adHelper.HandleAdCloseButton();
+                    Reusablemethods.HandleException("Other Sounds Menu", ex);
                 }
-                else
+
+                // Clap Sound
+                try
                 {
-                    Console.WriteLine("No Ad found");
+                    ClapSound.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
                 }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Clap Sound", ex);
+                }
+
+                // Camera Sound
+                try
+                {
+                    Camera.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Camera Sound", ex);
+                }
+
+                // Open Door Sound
+                try
+                {
+                    OpenDoor.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Open Door Sound", ex);
+                }
+
+                // Drum Beat Sound
+                try
+                {
+                    DrumBeat.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Drum Beat Sound", ex);
+                }
+            }
+            catch (Exception ex)
+            {
+                Reusablemethods.HandleException("Other Sounds Test", ex);
             }
         }
 
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
+
         IWebElement OtherSoundMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Other Sounds\"]");
         IWebElement ClapSound => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Clap\"]");
         IWebElement Camera => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Camera\"]");

@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -12,17 +11,22 @@ namespace Prank_Sound_App.Pages
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
         private AdHelperC adHelper;
+        Reusablemethods Reusablemethods;
 
         //Constructor
         public AnimalSounds(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+            this.adHelper = new AdHelperC(driver);
+            Reusablemethods = new Reusablemethods(driver, test);
+
         }
 
         public void AnimalSoundTest()
         {
+            Reusablemethods.ScrollToElementByText("Animal Sounds");
+
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
             {

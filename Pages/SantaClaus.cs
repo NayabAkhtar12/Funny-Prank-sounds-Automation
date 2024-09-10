@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -12,105 +11,84 @@ namespace Prank_Sound_App.Pages
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
         private AdHelperC adHelper;
+        Reusablemethods Reusablemethods;
 
         //Constructor
         public SantaClaus(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
-        }
+            this.adHelper = new AdHelperC(driver);
+            Reusablemethods = new Reusablemethods(driver, test);
 
-        public void SantaClausTest()
+        }
+        public void SantaClausSoundTest()
         {
-            ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
-            try
-            {
-                SantaClausMenu.Click();
-                SantaClaus1.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                SantaClaus2.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                SantaClaus3.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                SantaClaus4.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                SantaClaus5.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                SantaClaus6.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+            Reusablemethods.ScrollToElementByText("Santa Claus");
 
+            ExtentTest test = Extent.CreateTest("Santa Claus Sound Test");
+            try
+            {
+                // Santa Claus Menu
+                try
+                {
+                    SantaClausMenu.Click();
+                    Reusablemethods.InterAdHandle();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Santa Claus Menu", ex);
+                }
+
+                // Santa Claus 1
+                try
+                {
+                    SantaClaus1.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Santa Claus 1", ex);
+                }
+
+                // Santa Claus 2
+                try
+                {
+                    SantaClaus2.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Santa Claus 2", ex);
+                }
+
+                // Santa Claus 3
+                try
+                {
+                    SantaClaus3.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Santa Claus 3", ex);
+                }
+            }
+            catch (Exception ex)
+            {
+                Reusablemethods.HandleException("Santa Claus Sound Test", ex);
             }
         }
+
 
         IWebElement SantaClausMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus\"]");
         IWebElement SantaClaus1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 1\"]");

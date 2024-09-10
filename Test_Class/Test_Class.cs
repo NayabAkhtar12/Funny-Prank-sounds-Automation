@@ -122,85 +122,85 @@ namespace Prank_Sound_App.Test_Class
             HairClipper.HairClipperSoundTest();
         }
 
-        //HairDryer HairDryer;
+        HairDryer HairDryer;
 
-        //[TestMethod]
-        //public void HairDryerSound()
-        //{
-        //    ExtentTest test = Extent.CreateTest("Famous Places Report");
-        //    HairDryer = new HairDryer(driver, test);
-        //    HairDryer.HairDryerSoundTest();
-        //}
+        [TestMethod]
+        public void HairDryerSound()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            HairDryer = new HairDryer(driver, test);
+            HairDryer.HairDryerSoundTest();
+        }
 
-        //FartSong FartSong;
+        FartSong FartSong;
 
-        //[TestMethod]
-        //public void FartSongSound()
-        //{
-        //    ExtentTest test = Extent.CreateTest("Famous Places Report");
-        //    FartSong = new FartSong(driver, test);
-        //    FartSong.FartSongSoundTest();
-        //}
+        [TestMethod]
+        public void FartSongSound()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            FartSong = new FartSong(driver, test);
+            FartSong.FartSongSoundTest();
+        }
 
-        //WomenSneeze WomenSneeze;
+        WomenSneeze WomenSneeze;
 
-        //[TestMethod]
-        //public void WomenSneezeSound()
-        //{
-        //    ExtentTest test = Extent.CreateTest("Famous Places Report");
-        //    WomenSneeze = new WomenSneeze(driver, test);
-        //    WomenSneeze.WomenSneezeSoundTest();
-        //}
+        [TestMethod]
+        public void WomenSneezeSound()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            WomenSneeze = new WomenSneeze(driver, test);
+            WomenSneeze.WomenSneezeSoundTest();
+        }
 
-        //ManSneeze ManSneeze;
+        ManSneeze ManSneeze;
 
-        //[TestMethod]
-        //public void ManSneezeSound()
-        //{
-        //    ExtentTest test = Extent.CreateTest("Famous Places Report");
-        //    ManSneeze = new ManSneeze(driver, test);
-        //    ManSneeze.ManSneezeSoundTest();
-        //}
+        [TestMethod]
+        public void ManSneezeSound()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            ManSneeze = new ManSneeze(driver, test);
+            ManSneeze.MenSneezeSoundTest();
+        }
 
-        //BabySneeze BabySneeze;
+        BabySneeze BabySneeze;
 
-        //[TestMethod]
-        //public void BabySneezeSound()
-        //{
-        //    ExtentTest test = Extent.CreateTest("Famous Places Report");
-        //    BabySneeze = new BabySneeze(driver, test);
-        //    BabySneeze.BabySneezeSoundTest();
-        //}
+        [TestMethod]
+        public void BabySneezeSound()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            BabySneeze = new BabySneeze(driver, test);
+            BabySneeze.BabySneezeSoundTest();
+        }
 
-        //SleighBell SleighBell;
+        SleighBell SleighBell;
 
-        //[TestMethod]
-        //public void SleighBellSound()
-        //{
-        //    ExtentTest test = Extent.CreateTest("Famous Places Report");
-        //    SleighBell = new SleighBell(driver, test);
-        //    SleighBell.SleighBellSoundTest();
-        //}
+        [TestMethod]
+        public void SleighBellSound()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            SleighBell = new SleighBell(driver, test);
+            SleighBell.SleighBellSoundTest();
+        }
 
-        //SantaClaus SantaClaus;
+        SantaClaus SantaClaus;
 
-        //[TestMethod]
-        //public void SantaClausSound()
-        //{
-        //    ExtentTest test = Extent.CreateTest("Famous Places Report");
-        //    SantaClaus = new SantaClaus(driver, test);
-        //    SantaClaus.SantaClausTest();
-        //}
+        [TestMethod]
+        public void SantaClausSound()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            SantaClaus = new SantaClaus(driver, test);
+            SantaClaus.SantaClausSoundTest();
+        }
 
-        //OtherSounds OtherSound;
+        OtherSounds OtherSound;
 
-        //[TestMethod]
-        //public void OtherSounds()
-        //{
-        //    ExtentTest test = Extent.CreateTest("Famous Places Report");
-        //    OtherSound = new OtherSounds(driver, test);
-        //    OtherSound.OtherSoundsTest();
-        //}
+        [TestMethod]
+        public void OtherSounds()
+        {
+            ExtentTest test = Extent.CreateTest("Famous Places Report");
+            OtherSound = new OtherSounds(driver, test);
+            OtherSound.OtherSoundsTest();
+        }
 
     }
 }

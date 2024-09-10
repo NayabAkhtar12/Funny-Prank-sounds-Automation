@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -12,116 +11,85 @@ namespace Prank_Sound_App.Pages
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
         private AdHelperC adHelper;
+        Reusablemethods Reusablemethods;
 
         //Constructor
         public ManSneeze(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+            this.adHelper = new AdHelperC(driver);
+            Reusablemethods = new Reusablemethods(driver, test);
+
         }
 
-        public void ManSneezeSoundTest()
+        public void MenSneezeSoundTest()
         {
-            ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
+            Reusablemethods.ScrollToElementByText("Men Sneeze");
+            Test = Extent.CreateTest("Men Sneeze Sound Test");
             try
             {
-                MenSneezeMenu.Click();
-                MenSneeze1.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                MenSneeze2.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                MenSneeze3.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                MenSneeze4.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                MenSneeze5.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-                BackButton1.Click();
+                // Men Sneeze Menu
+                try
+                {
+                    MenSneezeMenu.Click();
+                    Reusablemethods.InterAdHandle();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Men Sneeze Menu", ex);
+                }
+
+                // Men Sneeze 1
+                try
+                {
+                    MenSneeze1.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Men Sneeze 1", ex);
+                }
+
+                // Men Sneeze 2
+                try
+                {
+                    MenSneeze2.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Men Sneeze 2", ex);
+                }
+
+                // Men Sneeze 3
+                try
+                {
+                    MenSneeze3.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Men Sneeze 3", ex);
+                }
+                driver.Navigate().Back();
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-        }
-        private void HandleAd()
-        {
-            if (adHelper.IsAdPresent())
-            {
-                if (adHelper.IsCrossButtonPresent())
-                {
-                    adHelper.HandleAdCrossButton();
-                }
-                else if (adHelper.IsCloseButtonPresent())
-                {
-                    adHelper.HandleAdCloseButton();
-                }
-                else
-                {
-                    Console.WriteLine("No Ad found");
-                }
+                Reusablemethods.HandleException("Men Sneeze Sound Test", ex);
             }
         }
 
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
         IWebElement MenSneezeMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Men Sneeze\"]");
         IWebElement MenSneeze1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Sneeze 1\"]");
         IWebElement MenSneeze2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Sneeze 2\"]");

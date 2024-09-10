@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -14,6 +13,8 @@ namespace Prank_Sound_App.Pages
         ExtentReports Extent = new ExtentReports();
         private AdHelperC adHelper;
         TouchAction touchAction;
+        Reusablemethods Reusablemethods;
+
         //Constructor
         public ManCough(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
@@ -21,9 +22,12 @@ namespace Prank_Sound_App.Pages
             this.Test = test;
             this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
             touchAction = new TouchAction(driver);
+            Reusablemethods = new Reusablemethods(driver, test);
+
         }
         public void CBanner()
         {
+
             //**************Code to close c banner ***********
             try
             {
@@ -45,6 +49,8 @@ namespace Prank_Sound_App.Pages
         }
         public void MannCoughSoundTest()
         {
+            Reusablemethods.ScrollToElementByText("Men Cough");
+
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
 
             try

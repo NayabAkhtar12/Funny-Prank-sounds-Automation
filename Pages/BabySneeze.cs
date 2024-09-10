@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using HolyQuran.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
@@ -12,89 +11,83 @@ namespace Prank_Sound_App.Pages
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
         private AdHelperC adHelper;
-
+        Reusablemethods Reusablemethods;
         //Constructor
         public BabySneeze(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+            this.adHelper = new AdHelperC(driver);
+            Reusablemethods = new Reusablemethods(driver, test);
 
         }
 
         public void BabySneezeSoundTest()
         {
-            ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
+            Reusablemethods.ScrollToElementByText("Baby Sneeze");
+            ExtentTest test = Extent.CreateTest("Baby Sneeze Sound Test");
             try
             {
-                BabySneezeMenu.Click();
-                BabySneeze1.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                BabySneeze2.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                BabySneeze3.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-                BackButton1.Click();
+                // Baby Sneeze Menu
+                try
+                {
+                    BabySneezeMenu.Click();
+                    Reusablemethods.InterAdHandle();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Baby Sneeze Menu", ex);
+                }
 
+                // Baby Sneeze 1
+                try
+                {
+                    BabySneeze1.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Baby Sneeze 1", ex);
+                }
+
+                // Baby Sneeze 2
+                try
+                {
+                    BabySneeze2.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Baby Sneeze 2", ex);
+                }
+
+                // Baby Sneeze 3
+                try
+                {
+                    BabySneeze3.Click();
+                    Reusablemethods.InterAdHandle();
+                    PlayButton.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Baby Sneeze 3", ex);
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-        }
-        private void HandleAd()
-        {
-            if (adHelper.IsAdPresent())
-            {
-                if (adHelper.IsCrossButtonPresent())
-                {
-                    adHelper.HandleAdCrossButton();
-                }
-                else if (adHelper.IsCloseButtonPresent())
-                {
-                    adHelper.HandleAdCloseButton();
-                }
-                else
-                {
-                    Console.WriteLine("No Ad found");
-                }
+                Reusablemethods.HandleException("Baby Sneeze Sound Test", ex);
             }
         }
 
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
         IWebElement BabySneezeMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Baby Sneeze\"]");
         IWebElement BabySneeze1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Baby Sneeze 1\"]");
         IWebElement BabySneeze2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Baby Sneeze 2\"]");
