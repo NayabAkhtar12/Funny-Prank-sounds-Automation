@@ -1,246 +1,147 @@
 ﻿using AventStack.ExtentReports;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
 
 namespace Prank_Sound_App.Pages
 {
     class AnimalSounds
     {
-        private AppiumDriver<IWebElement> driver;
+        private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
+        Reusablemethods Reusablemethods;
+
         //Constructor
-        public AnimalSounds(AppiumDriver<IWebElement> driver, ExtentTest test)
+        public AnimalSounds(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
+            Reusablemethods = new Reusablemethods(driver, test);
+
         }
 
         public void AnimalSoundTest()
         {
+            Reusablemethods.ScrollToElementByText("Animal Sounds");
+
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
             {
+                try
+                {
+                    AnimalSoundMenu.Click();
 
-                AnimalSoundMenu.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
+                    Reusablemethods.InterAdHandle();
 
-                AnimalSound1.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                AnimalSound2.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                AnimalSound3.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                AnimalSound4.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                AnimalSound5.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
-                AnimalSound6.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking Zoo: " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("Air Horn Menu", ex);
+                }
 
-            }
 
-            try
-            {
-                AnimalSound7.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
 
-            }
+                try
+                {
+                    AnimalSound1.Click();
 
-            try
-            {
-                AnimalSound8.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                    Reusablemethods.InterAdHandle();
 
-            }
+                    //  Loop.Click();
 
-            try
-            {
-                AnimalSound9.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-            }
-            try
-            {
+                    PlayButton.Click();
+                    Thread.Sleep(3000);
+                    // VolumeUp.Click();
+                    //   VolumeDown.Click();
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                    //  Thread.Sleep(3000);
 
-                IWebElement ScrollElement = driver.FindElement(MobileBy.AndroidUIAutomator(
-                    "new UiScrollable(new UiSelector().scrollable(true))" +
-                    ".scrollIntoView(new UiSelector().text(\"Bird\")) "));
 
-                AnimalSound10.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("AnimalSound1", ex);
+                }
 
-            }
-            try
-            {
-                AnimalSound11.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                //AnimalSound2
 
-            }
-            try
-            {
-                AnimalSound12.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
+                try
+                {
+                    AnimalSound2.Click();
 
-            }
-            try
-            {
-                AnimalSound13.Click();
-                PlayButton.Click();
-                VolumeUp.Click();
-                VolumeDown.Click();
-                Loop.Click();
-                BackButton1.Click();
-                BackButton1.Click();
+                    Reusablemethods.InterAdHandle();
+
+                    PlayButton.Click();
+                    Thread.Sleep(3000);
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("AnimalSound2", ex);
+                }
+
+                //AnimalSound3
+
+                try
+                {
+                    AnimalSound3.Click();
+
+                    Reusablemethods.InterAdHandle();
+
+                    PlayButton.Click();
+                    Thread.Sleep(3000);
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("AnimalSound 3", ex);
+                }
+
+
+                //AnimalSound4
+
+
+                try
+                {
+                    AnimalSound4.Click();
+
+                    Reusablemethods.InterAdHandle();
+
+                    PlayButton.Click();
+                    Thread.Sleep(3000);
+                    AddtoBookmark.Click();
+                    driver.Navigate().Back();
+                    driver.Navigate().Back();
+
+                }
+                catch (Exception ex)
+                {
+                    Reusablemethods.HandleException("AnimalSound4", ex);
+                }
 
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception occurred while clicking : " + ex.Message);
-                Test.Log(Status.Fail, $"Test failed due to: {ex.Message}");
-
+                Reusablemethods.HandleException("Air Horn ", ex);
             }
+
         }
 
 
         IWebElement AnimalSoundMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Animal Sounds\"]");
 
-        IWebElement BackButtonMenu => driver.FindElementById("");
+        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
 
         IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
         IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
         IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
         IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivPPCv");
+        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
         IWebElement AnimalSound1 => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
         IWebElement AnimalSound2 => driver.FindElementByXPath("(//android.view.ViewGroup[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/content_container\"])[2]");
         IWebElement AnimalSound3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Monkey\"]");

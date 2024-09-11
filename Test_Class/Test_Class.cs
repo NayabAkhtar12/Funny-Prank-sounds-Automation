@@ -7,7 +7,7 @@ namespace Prank_Sound_App.Test_Class
     [TestClass]
     public class Test_Class : TestInitiallize
     {
-        AirHorn AirHorn;
+        AirHorn? AirHorn;
         [TestMethod]
         public void AirHornSounds()
         {
@@ -16,8 +16,8 @@ namespace Prank_Sound_App.Test_Class
             AirHorn.AirHornSoundTest();
         }
 
-        AnimalSounds AnimalSound;
-        //   [TestMethod]
+        AnimalSounds? AnimalSound;
+        [TestMethod]
         public void AnimalSounds()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
@@ -25,9 +25,9 @@ namespace Prank_Sound_App.Test_Class
             AnimalSound.AnimalSoundTest();
         }
 
-        FartSound FartSound;
+        FartSound? FartSound;
 
-        //  [TestMethod]
+        [TestMethod]
         public void FartSounds()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
@@ -35,8 +35,8 @@ namespace Prank_Sound_App.Test_Class
             FartSound.FartSoundTest();
         }
 
-        WomenCough WomenCough;
-        //  [TestMethod]
+        WomenCough? WomenCough;
+        [TestMethod]
         public void WomenCoughSound()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
@@ -44,25 +44,25 @@ namespace Prank_Sound_App.Test_Class
             WomenCough.WomenCoughSoundTest();
         }
 
-        ManCough ManCough;
-        //  [TestMethod]
+        ManCough? ManCough;
+        [TestMethod]
         public void MenCoughSound()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             ManCough = new ManCough(driver, test);
-            ManCough.MenCoughTest();
+            ManCough.MannCoughSoundTest();
         }
 
-        BurpSounds BurpSound;
-        //  [TestMethod]
+        BurpSounds? BurpSound;
+        [TestMethod]
         public void BurpSounds()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             BurpSound = new BurpSounds(driver, test);
-            BurpSound.BurpSoundsTest();
+            BurpSound.BurpSoundTest();
         }
 
-        FunnyPolice FunnyPolice;
+        FunnyPolice? FunnyPolice;
         [TestMethod]
         public void FunnyPoliceSounds()
         {
@@ -71,24 +71,24 @@ namespace Prank_Sound_App.Test_Class
             FunnyPolice.FunnyPoliceTest();
         }
 
-        DoorBell DoorBell;
+        DoorBell? DoorBell;
         [TestMethod]
         public void DoorBellSounds()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             DoorBell = new DoorBell(driver, test);
-            DoorBell.DoorBellTest();
+            DoorBell.DoorBellSoundTest();
         }
 
 
-        CarHorn CarHorn;
+        CarHorn? CarHorn;
 
         [TestMethod]
         public void CarHornTest()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             CarHorn = new CarHorn(driver, test);
-            CarHorn.CarHornTest();
+            CarHorn.CarHornSoundTest();
         }
 
         GunSounds GunSounds;
@@ -98,10 +98,10 @@ namespace Prank_Sound_App.Test_Class
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             GunSounds = new GunSounds(driver, test);
-            GunSounds.GunSoundsTest();
+            GunSounds.GunSoundTest();
         }
 
-        Breaking Breaking;
+        Breaking? Breaking;
 
         [TestMethod]
         public void BreakingSound()
@@ -111,7 +111,7 @@ namespace Prank_Sound_App.Test_Class
             Breaking.BreakingSoundTest();
         }
 
-        HairClipper HairClipper;
+        HairClipper? HairClipper;
 
         [TestMethod]
         public void HairClipperSound()
@@ -121,7 +121,7 @@ namespace Prank_Sound_App.Test_Class
             HairClipper.HairClipperSoundTest();
         }
 
-        HairDryer HairDryer;
+        HairDryer? HairDryer;
 
         [TestMethod]
         public void HairDryerSound()
@@ -131,7 +131,7 @@ namespace Prank_Sound_App.Test_Class
             HairDryer.HairDryerSoundTest();
         }
 
-        FartSong FartSong;
+        FartSong? FartSong;
 
         [TestMethod]
         public void FartSongSound()
@@ -141,7 +141,7 @@ namespace Prank_Sound_App.Test_Class
             FartSong.FartSongSoundTest();
         }
 
-        WomenSneeze WomenSneeze;
+        WomenSneeze? WomenSneeze;
 
         [TestMethod]
         public void WomenSneezeSound()
@@ -151,17 +151,17 @@ namespace Prank_Sound_App.Test_Class
             WomenSneeze.WomenSneezeSoundTest();
         }
 
-        ManSneeze ManSneeze;
+        ManSneeze? ManSneeze;
 
         [TestMethod]
         public void ManSneezeSound()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             ManSneeze = new ManSneeze(driver, test);
-            ManSneeze.ManSneezeSoundTest();
+            ManSneeze.MenSneezeSoundTest();
         }
 
-        BabySneeze BabySneeze;
+        BabySneeze? BabySneeze;
 
         [TestMethod]
         public void BabySneezeSound()
@@ -171,7 +171,7 @@ namespace Prank_Sound_App.Test_Class
             BabySneeze.BabySneezeSoundTest();
         }
 
-        SleighBell SleighBell;
+        SleighBell? SleighBell;
 
         [TestMethod]
         public void SleighBellSound()
@@ -181,17 +181,17 @@ namespace Prank_Sound_App.Test_Class
             SleighBell.SleighBellSoundTest();
         }
 
-        SantaClaus SantaClaus;
+        SantaClaus? SantaClaus;
 
         [TestMethod]
         public void SantaClausSound()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             SantaClaus = new SantaClaus(driver, test);
-            SantaClaus.SantaClausTest();
+            SantaClaus.SantaClausSoundTest();
         }
 
-        OtherSounds OtherSound;
+        OtherSounds? OtherSound;
 
         [TestMethod]
         public void OtherSounds()
