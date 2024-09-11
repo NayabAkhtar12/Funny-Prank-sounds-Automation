@@ -10,7 +10,6 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         Reusablemethods Reusablemethods;
 
         //Constructor
@@ -18,7 +17,6 @@ namespace Prank_Sound_App.Pages
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver);
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
@@ -34,46 +32,46 @@ namespace Prank_Sound_App.Pages
                 try
                 {
                     BreakingSoundMenu.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Breaking Sound Menu", ex);
+                    Reusablemethods.HandleException("Breaking Sound Menu", ex);
                 }
 
                 // Breaking Sound 1
                 try
                 {
                     BreakingSound1.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Breaking Sound 1", ex);
+                    Reusablemethods.HandleException("Breaking Sound 1", ex);
                 }
 
                 // Breaking Sound 2
                 try
                 {
                     BreakingSound2.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Breaking Sound 2", ex);
+                    Reusablemethods.HandleException("Breaking Sound 2", ex);
                 }
 
                 // Breaking Sound 3
                 try
                 {
                     BreakingSound3.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
@@ -81,38 +79,12 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Breaking Sound 3", ex);
+                    Reusablemethods.HandleException("Breaking Sound 3", ex);
                 }
             }
             catch (Exception ex)
             {
-                HandleException("Breaking Sound Test", ex);
-            }
-        }
-
-
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
-
-        private void HandleAd()
-        {
-            if (adHelper.IsAdPresent())
-            {
-                if (adHelper.IsCrossButtonPresent())
-                {
-                    adHelper.HandleAdCrossButton();
-                }
-                else if (adHelper.IsCloseButtonPresent())
-                {
-                    adHelper.HandleAdCloseButton();
-                }
-                else
-                {
-                    Console.WriteLine("No Ad found");
-                }
+                Reusablemethods.HandleException("Breaking Sound Test", ex);
             }
         }
 

@@ -11,7 +11,6 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         Reusablemethods Reusablemethods;
 
         //Constructor
@@ -19,7 +18,6 @@ namespace Prank_Sound_App.Pages
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver);
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
@@ -35,46 +33,46 @@ namespace Prank_Sound_App.Pages
                 try
                 {
                     BurpSoundMenu.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Burp Sound Menu", ex);
+                    Reusablemethods.HandleException("Burp Sound Menu", ex);
                 }
 
                 // Burp Sound 1
                 try
                 {
                     BurpSound1.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Burp Sound 1", ex);
+                    Reusablemethods.HandleException("Burp Sound 1", ex);
                 }
 
                 // Burp Sound 2
                 try
                 {
                     BurpSound2.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Burp Sound 2", ex);
+                    Reusablemethods.HandleException("Burp Sound 2", ex);
                 }
 
                 // Burp Sound 3
                 try
                 {
                     BurpSound3.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     //   WaitForElement(AddtoBookmark);
                     AddtoBookmark.Click();
@@ -84,41 +82,16 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Burp Sound 3", ex);
+                    Reusablemethods.HandleException("Burp Sound 3", ex);
                 }
             }
             catch (Exception ex)
             {
-                HandleException("Burp Sound Test", ex);
+                Reusablemethods.HandleException("Burp Sound Test", ex);
             }
         }
 
 
-
-        private void HandleAd()
-        {
-            if (adHelper.IsAdPresent())
-            {
-                if (adHelper.IsCrossButtonPresent())
-                {
-                    adHelper.HandleAdCrossButton();
-                }
-                else if (adHelper.IsCloseButtonPresent())
-                {
-                    adHelper.HandleAdCloseButton();
-                }
-                else
-                {
-                    Console.WriteLine("No Ad found");
-                }
-            }
-        }
-
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
         private void WaitForElement(IWebElement element)
         {
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));

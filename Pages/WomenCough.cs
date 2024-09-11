@@ -10,7 +10,6 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         Reusablemethods Reusablemethods;
 
         //Constructor
@@ -18,7 +17,6 @@ namespace Prank_Sound_App.Pages
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver);
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
@@ -33,28 +31,10 @@ namespace Prank_Sound_App.Pages
                 // Women Cough Menu
                 WoMenCoughMenu.Click();
 
-                try
-                {
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    HandleException("Women Cough Menu", ex);
-                }
+                Reusablemethods.InterAdHandle();
 
                 //Code to close Collapsible Banner by clicking on Collapse Icon
-                adHelper.HandleCollapsibleBanner();
+                Reusablemethods.CBanner();
 
 
                 // Women Cough 1
@@ -62,18 +42,8 @@ namespace Prank_Sound_App.Pages
                 {
                     WoMenCough1.Click();
 
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
+                    Reusablemethods.InterAdHandle();
+
 
                     PlayButton.Click();
                     Thread.Sleep(3000);
@@ -82,7 +52,7 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Women Cough 1", ex);
+                    Reusablemethods.HandleException("Women Cough 1", ex);
                 }
 
                 // Women Cough 2
@@ -90,18 +60,8 @@ namespace Prank_Sound_App.Pages
                 {
                     WoMenCough2.Click();
 
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
+                    Reusablemethods.InterAdHandle();
+
 
                     PlayButton.Click();
                     Thread.Sleep(3000);
@@ -110,7 +70,7 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Women Cough 2", ex);
+                    Reusablemethods.HandleException("Women Cough 2", ex);
                 }
 
                 // Women Cough 3
@@ -118,18 +78,8 @@ namespace Prank_Sound_App.Pages
                 {
                     WoMenCough3.Click();
 
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
+                    Reusablemethods.InterAdHandle();
+
 
                     PlayButton.Click();
                     Thread.Sleep(3000);
@@ -139,20 +89,16 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Women Cough 3", ex);
+                    Reusablemethods.HandleException("Women Cough 3", ex);
                 }
             }
             catch (Exception ex)
             {
-                HandleException("Women Cough Menu", ex);
+                Reusablemethods.HandleException("Women Cough Menu", ex);
             }
 
         }
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
+
         IWebElement WoMenCoughMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Women Cough\"]");
         IWebElement WoMenCough1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Woman Cough 1\"]");
         IWebElement WoMenCough2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Woman Cough 2\"]");

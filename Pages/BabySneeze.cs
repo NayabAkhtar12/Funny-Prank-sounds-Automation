@@ -10,14 +10,13 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         Reusablemethods Reusablemethods;
         //Constructor
         public BabySneeze(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver);
+            //this.adHelper = new AdHelperC(driver);
             Reusablemethods = new Reusablemethods(driver, test);
 
         }

@@ -7,7 +7,7 @@ namespace Prank_Sound_App.Test_Class
     [TestClass]
     public class Test_Class : TestInitiallize
     {
-        AirHorn AirHorn;
+        AirHorn? AirHorn;
         [TestMethod]
         public void AirHornSounds()
         {
@@ -16,7 +16,7 @@ namespace Prank_Sound_App.Test_Class
             AirHorn.AirHornSoundTest();
         }
 
-        AnimalSounds AnimalSound;
+        AnimalSounds? AnimalSound;
         [TestMethod]
         public void AnimalSounds()
         {
@@ -25,7 +25,7 @@ namespace Prank_Sound_App.Test_Class
             AnimalSound.AnimalSoundTest();
         }
 
-        FartSound FartSound;
+        FartSound? FartSound;
 
         [TestMethod]
         public void FartSounds()
@@ -35,7 +35,7 @@ namespace Prank_Sound_App.Test_Class
             FartSound.FartSoundTest();
         }
 
-        WomenCough WomenCough;
+        WomenCough? WomenCough;
         [TestMethod]
         public void WomenCoughSound()
         {
@@ -44,17 +44,16 @@ namespace Prank_Sound_App.Test_Class
             WomenCough.WomenCoughSoundTest();
         }
 
-        ManCough ManCough;
+        ManCough? ManCough;
         [TestMethod]
         public void MenCoughSound()
         {
             ExtentTest test = Extent.CreateTest("Famous Places Report");
             ManCough = new ManCough(driver, test);
-            ManCough.CBanner();
             ManCough.MannCoughSoundTest();
         }
 
-        BurpSounds BurpSound;
+        BurpSounds? BurpSound;
         [TestMethod]
         public void BurpSounds()
         {
@@ -63,7 +62,7 @@ namespace Prank_Sound_App.Test_Class
             BurpSound.BurpSoundTest();
         }
 
-        FunnyPolice FunnyPolice;
+        FunnyPolice? FunnyPolice;
         [TestMethod]
         public void FunnyPoliceSounds()
         {
@@ -72,7 +71,7 @@ namespace Prank_Sound_App.Test_Class
             FunnyPolice.FunnyPoliceTest();
         }
 
-        DoorBell DoorBell;
+        DoorBell? DoorBell;
         [TestMethod]
         public void DoorBellSounds()
         {
@@ -82,7 +81,7 @@ namespace Prank_Sound_App.Test_Class
         }
 
 
-        CarHorn CarHorn;
+        CarHorn? CarHorn;
 
         [TestMethod]
         public void CarHornTest()
@@ -102,7 +101,7 @@ namespace Prank_Sound_App.Test_Class
             GunSounds.GunSoundTest();
         }
 
-        Breaking Breaking;
+        Breaking? Breaking;
 
         [TestMethod]
         public void BreakingSound()
@@ -112,7 +111,7 @@ namespace Prank_Sound_App.Test_Class
             Breaking.BreakingSoundTest();
         }
 
-        HairClipper HairClipper;
+        HairClipper? HairClipper;
 
         [TestMethod]
         public void HairClipperSound()
@@ -122,7 +121,7 @@ namespace Prank_Sound_App.Test_Class
             HairClipper.HairClipperSoundTest();
         }
 
-        HairDryer HairDryer;
+        HairDryer? HairDryer;
 
         [TestMethod]
         public void HairDryerSound()
@@ -132,7 +131,7 @@ namespace Prank_Sound_App.Test_Class
             HairDryer.HairDryerSoundTest();
         }
 
-        FartSong FartSong;
+        FartSong? FartSong;
 
         [TestMethod]
         public void FartSongSound()
@@ -142,7 +141,7 @@ namespace Prank_Sound_App.Test_Class
             FartSong.FartSongSoundTest();
         }
 
-        WomenSneeze WomenSneeze;
+        WomenSneeze? WomenSneeze;
 
         [TestMethod]
         public void WomenSneezeSound()
@@ -152,7 +151,7 @@ namespace Prank_Sound_App.Test_Class
             WomenSneeze.WomenSneezeSoundTest();
         }
 
-        ManSneeze ManSneeze;
+        ManSneeze? ManSneeze;
 
         [TestMethod]
         public void ManSneezeSound()
@@ -162,7 +161,7 @@ namespace Prank_Sound_App.Test_Class
             ManSneeze.MenSneezeSoundTest();
         }
 
-        BabySneeze BabySneeze;
+        BabySneeze? BabySneeze;
 
         [TestMethod]
         public void BabySneezeSound()
@@ -172,7 +171,7 @@ namespace Prank_Sound_App.Test_Class
             BabySneeze.BabySneezeSoundTest();
         }
 
-        SleighBell SleighBell;
+        SleighBell? SleighBell;
 
         [TestMethod]
         public void SleighBellSound()
@@ -182,7 +181,7 @@ namespace Prank_Sound_App.Test_Class
             SleighBell.SleighBellSoundTest();
         }
 
-        SantaClaus SantaClaus;
+        SantaClaus? SantaClaus;
 
         [TestMethod]
         public void SantaClausSound()
@@ -192,7 +191,7 @@ namespace Prank_Sound_App.Test_Class
             SantaClaus.SantaClausSoundTest();
         }
 
-        OtherSounds OtherSound;
+        OtherSounds? OtherSound;
 
         [TestMethod]
         public void OtherSounds()

@@ -11,7 +11,6 @@ namespace Prank_Sound_App.Pages
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
         Reusablemethods Reusablemethods;
-        private AdHelperC adHelper;
 
         //Constructor
         public WomenSneeze(AppiumDriver<AndroidElement> driver, ExtentTest test)
@@ -19,7 +18,6 @@ namespace Prank_Sound_App.Pages
             this.driver = driver;
             this.Test = test;
             Reusablemethods = new Reusablemethods(driver, test);
-            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
 
         }
 

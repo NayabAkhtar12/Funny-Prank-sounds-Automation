@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Support.UI;
 
 namespace Prank_Sound_App.Pages
 {
@@ -11,7 +10,6 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         Reusablemethods Reusablemethods;
 
         //Constructor
@@ -19,13 +17,13 @@ namespace Prank_Sound_App.Pages
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver);
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
 
         public void FartSoundTest()
         {
+            Reusablemethods.Prank2ndSession();
             Reusablemethods.ScrollToElementByText("Fart Sound");
 
             ExtentTest test = Extent.CreateTest("Fart Sound Test");
@@ -35,33 +33,33 @@ namespace Prank_Sound_App.Pages
                 try
                 {
                     FartSoundMenu.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
 
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Fart Sound Menu", ex);
+                    Reusablemethods.HandleException("Fart Sound Menu", ex);
                 }
 
                 // Fart Sound 1
                 try
                 {
                     FartSound1.Click();
-                    //     HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Fart Sound 1", ex);
+                    Reusablemethods.HandleException("Fart Sound 1", ex);
                 }
 
                 // Fart Sound 2
                 try
                 {
                     FartSound2.Click();
-                    //         HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     // WaitForElement(AddtoBookmark); // Use explicit wait instead of Thread.Sleep
                     AddtoBookmark.Click();
@@ -69,31 +67,31 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Fart Sound 2", ex);
+                    Reusablemethods.HandleException("Fart Sound 2", ex);
                 }
 
                 // Fart Sound 3
                 try
                 {
                     FartSound3.Click();
-                    //  HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
-                    WaitForElement(AddtoBookmark); // Use explicit wait instead of Thread.Sleep
+                    Reusablemethods.WaitForElement(AddtoBookmark); // Use explicit wait instead of Thread.Sleep
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Fart Sound 3", ex);
+                    Reusablemethods.HandleException("Fart Sound 3", ex);
                 }
 
                 // Fart Sound 4
                 try
                 {
                     FartSound4.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
-                    WaitForElement(AddtoBookmark); // Use explicit wait instead of Thread.Sleep
+                    Reusablemethods.WaitForElement(AddtoBookmark); // Use explicit wait instead of Thread.Sleep
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                     driver.Navigate().Back();
@@ -101,43 +99,16 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Fart Sound 4", ex);
+                    Reusablemethods.HandleException("Fart Sound 4", ex);
                 }
             }
             catch (Exception ex)
             {
-                HandleException("Fart Sound Test", ex);
+                Reusablemethods.HandleException("Fart Sound Test", ex);
             }
         }
 
-        private void HandleAd()
-        {
-            if (adHelper.IsAdPresent())
-            {
-                if (adHelper.IsCrossButtonPresent())
-                {
-                    adHelper.HandleAdCrossButton();
-                }
-                else if (adHelper.IsCloseButtonPresent())
-                {
-                    adHelper.HandleAdCloseButton();
-                }
-                else
-                {
-                    Console.WriteLine("No Ad found");
-                }
-            }
-        }
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
-        private void WaitForElement(IWebElement element)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(d => element.Displayed);
-        }
+
 
 
         IWebElement FartSoundMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound\"]");

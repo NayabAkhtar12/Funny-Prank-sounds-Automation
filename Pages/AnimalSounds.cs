@@ -10,7 +10,6 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         Reusablemethods Reusablemethods;
 
         //Constructor
@@ -18,7 +17,6 @@ namespace Prank_Sound_App.Pages
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver);
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
@@ -30,52 +28,26 @@ namespace Prank_Sound_App.Pages
             ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
             try
             {
-                AnimalSoundMenu.Click();
                 try
                 {
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
+                    AnimalSoundMenu.Click();
 
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+                    Reusablemethods.InterAdHandle();
 
-                    {
-                        adHelper.HandleAdCloseButton();
-
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Air Horn Menu", ex);
+                    Reusablemethods.HandleException("Air Horn Menu", ex);
                 }
 
 
-                AnimalSound1.Click();
 
                 try
                 {
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
+                    AnimalSound1.Click();
 
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+                    Reusablemethods.InterAdHandle();
 
-                    {
-                        adHelper.HandleAdCloseButton();
-
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
                     //  Loop.Click();
 
                     PlayButton.Click();
@@ -90,30 +62,17 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("AnimalSound1", ex);
+                    Reusablemethods.HandleException("AnimalSound1", ex);
                 }
 
                 //AnimalSound2
-                AnimalSound2.Click();
 
                 try
                 {
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
+                    AnimalSound2.Click();
 
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+                    Reusablemethods.InterAdHandle();
 
-                    {
-                        adHelper.HandleAdCloseButton();
-
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
                     PlayButton.Click();
                     Thread.Sleep(3000);
                     AddtoBookmark.Click();
@@ -121,30 +80,17 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("AnimalSound2", ex);
+                    Reusablemethods.HandleException("AnimalSound2", ex);
                 }
 
                 //AnimalSound3
-                AnimalSound3.Click();
 
                 try
                 {
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
+                    AnimalSound3.Click();
 
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+                    Reusablemethods.InterAdHandle();
 
-                    {
-                        adHelper.HandleAdCloseButton();
-
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
                     PlayButton.Click();
                     Thread.Sleep(3000);
                     AddtoBookmark.Click();
@@ -153,32 +99,19 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("AnimalSound 3", ex);
+                    Reusablemethods.HandleException("AnimalSound 3", ex);
                 }
 
 
                 //AnimalSound4
 
-                AnimalSound4.Click();
 
                 try
                 {
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
+                    AnimalSound4.Click();
 
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
+                    Reusablemethods.InterAdHandle();
 
-                    {
-                        adHelper.HandleAdCloseButton();
-
-                    }
-
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
                     PlayButton.Click();
                     Thread.Sleep(3000);
                     AddtoBookmark.Click();
@@ -188,22 +121,17 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("AnimalSound4", ex);
+                    Reusablemethods.HandleException("AnimalSound4", ex);
                 }
 
             }
             catch (Exception ex)
             {
-                HandleException("Air Horn ", ex);
+                Reusablemethods.HandleException("Air Horn ", ex);
             }
 
         }
 
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
 
         IWebElement AnimalSoundMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Animal Sounds\"]");
 

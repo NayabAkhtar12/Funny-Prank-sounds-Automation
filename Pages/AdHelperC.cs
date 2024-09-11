@@ -53,7 +53,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Timer or close button not found.");
+                Console.WriteLine("Timer or close button not found.", ex);
             }
         }
 
@@ -121,7 +121,7 @@ namespace Prank_Sound_App.Pages
             }
             catch (Exception ex)
             {
-                Console.WriteLine("CBanner not found.");
+                Console.WriteLine("CBanner not found.", ex);
             }
 
         }

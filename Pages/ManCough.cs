@@ -11,7 +11,6 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         TouchAction touchAction;
         Reusablemethods Reusablemethods;
 
@@ -20,33 +19,11 @@ namespace Prank_Sound_App.Pages
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
             touchAction = new TouchAction(driver);
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
-        public void CBanner()
-        {
 
-            //**************Code to close c banner ***********
-            try
-            {
-
-                var x = 667;
-                var y = 850;
-
-                touchAction.Tap(x, y).Perform();
-
-                // new TouchAction(driver)
-                //.Tap(PointOption.Point(x, y))
-                //.Perform();
-                Console.WriteLine("Tap performed successfully at coordinates: (" + x + ", " + y + ")");
-            }
-            catch (Exception ex)
-            {
-                HandleException("C Banner nt closeable", ex);
-            }
-        }
         public void MannCoughSoundTest()
         {
             Reusablemethods.ScrollToElementByText("Men Cough");
@@ -60,22 +37,12 @@ namespace Prank_Sound_App.Pages
 
                 try
                 {
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
+                    Reusablemethods.InterAdHandle();
+
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Men Cough Menu", ex);
+                    Reusablemethods.HandleException("Men Cough Menu", ex);
                 }
 
                 // Men Cough 1
@@ -83,18 +50,8 @@ namespace Prank_Sound_App.Pages
                 {
                     ManCough1.Click();
 
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
+                    Reusablemethods.InterAdHandle();
+
 
                     PlayButton.Click();
                     Thread.Sleep(3000);
@@ -103,7 +60,7 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Men Cough 1", ex);
+                    Reusablemethods.HandleException("Men Cough 1", ex);
                 }
 
                 // Men Cough 2
@@ -111,18 +68,7 @@ namespace Prank_Sound_App.Pages
                 {
                     ManCough2.Click();
 
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
+                    Reusablemethods.InterAdHandle();
 
                     PlayButton.Click();
                     Thread.Sleep(3000);
@@ -131,7 +77,7 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Men Cough 2", ex);
+                    Reusablemethods.HandleException("Men Cough 2", ex);
                 }
 
                 // Men Cough 3
@@ -139,18 +85,8 @@ namespace Prank_Sound_App.Pages
                 {
                     ManCough3.Click();
 
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
+                    Reusablemethods.InterAdHandle();
+
 
                     PlayButton.Click();
                     Thread.Sleep(3000);
@@ -159,7 +95,7 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Men Cough 3", ex);
+                    Reusablemethods.HandleException("Men Cough 3", ex);
                 }
 
                 // Men Cough 4
@@ -167,18 +103,8 @@ namespace Prank_Sound_App.Pages
                 {
                     ManCough4.Click();
 
-                    if (adHelper.IsAdPresent() && adHelper.IsCrossButtonPresent())
-                    {
-                        adHelper.HandleAdCrossButton();
-                    }
-                    else if (adHelper.IsAdPresent() && adHelper.IsCloseButtonPresent())
-                    {
-                        adHelper.HandleAdCloseButton();
-                    }
-                    else
-                    {
-                        Console.WriteLine("No Ad found");
-                    }
+                    Reusablemethods.InterAdHandle();
+
 
                     PlayButton.Click();
                     Thread.Sleep(3000);
@@ -187,20 +113,16 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Men Cough 4", ex);
+                    Reusablemethods.HandleException("Men Cough 4", ex);
                 }
 
             }
             catch (Exception ex)
             {
-                HandleException("Men Cough Menu", ex);
+                Reusablemethods.HandleException("Men Cough Menu", ex);
             }
         }
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
+
         IWebElement ManCoughMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Men Cough\"]");
         IWebElement ManCough1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 1\"]");
         IWebElement ManCough2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 2\"]");

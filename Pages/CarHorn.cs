@@ -10,7 +10,6 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         Reusablemethods Reusablemethods;
 
         //Constructor
@@ -18,7 +17,6 @@ namespace Prank_Sound_App.Pages
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver);
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
@@ -34,46 +32,46 @@ namespace Prank_Sound_App.Pages
                 try
                 {
                     CarHornMenu.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Car Horn Menu", ex);
+                    Reusablemethods.HandleException("Car Horn Menu", ex);
                 }
 
                 // Car Horn 1
                 try
                 {
                     CarHorn1.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Car Horn 1", ex);
+                    Reusablemethods.HandleException("Car Horn 1", ex);
                 }
 
                 // Car Horn 2
                 try
                 {
                     CarHorn2.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Car Horn 2", ex);
+                    Reusablemethods.HandleException("Car Horn 2", ex);
                 }
 
                 // Car Horn 3
                 try
                 {
                     CarHorn3.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
@@ -81,39 +79,16 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Car Horn 3", ex);
+                    Reusablemethods.HandleException("Car Horn 3", ex);
                 }
             }
             catch (Exception ex)
             {
-                HandleException("Car Horn Sound Test", ex);
+                Reusablemethods.HandleException("Car Horn Sound Test", ex);
             }
         }
 
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
 
-        private void HandleAd()
-        {
-            if (adHelper.IsAdPresent())
-            {
-                if (adHelper.IsCrossButtonPresent())
-                {
-                    adHelper.HandleAdCrossButton();
-                }
-                else if (adHelper.IsCloseButtonPresent())
-                {
-                    adHelper.HandleAdCloseButton();
-                }
-                else
-                {
-                    Console.WriteLine("No Ad found");
-                }
-            }
-        }
         IWebElement CarHornMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Car Horn\"]");
         IWebElement CarHorn1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Car Horn 1\"]");
         IWebElement CarHorn2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Car Horn 2\"]");

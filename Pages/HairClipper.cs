@@ -10,14 +10,12 @@ namespace Prank_Sound_App.Pages
         private AppiumDriver<AndroidElement> driver;
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
-        private AdHelperC adHelper;
         Reusablemethods Reusablemethods;
         //Constructor
         public HairClipper(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
             this.Test = test;
-            this.adHelper = new AdHelperC(driver);
             Reusablemethods = new Reusablemethods(driver, test);
         }
 
@@ -31,46 +29,46 @@ namespace Prank_Sound_App.Pages
                 try
                 {
                     HairClipperMenu.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Hair Clipper Menu", ex);
+                    Reusablemethods.HandleException("Hair Clipper Menu", ex);
                 }
 
                 // Hair Clipper 1
                 try
                 {
                     HairClipper1.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Hair Clipper 1", ex);
+                    Reusablemethods.HandleException("Hair Clipper 1", ex);
                 }
 
                 // Hair Clipper 2
                 try
                 {
                     HairClipper2.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Hair Clipper 2", ex);
+                    Reusablemethods.HandleException("Hair Clipper 2", ex);
                 }
 
                 // Hair Clipper 3
                 try
                 {
                     HairClipper3.Click();
-                    HandleAd();
+                    Reusablemethods.InterAdHandle();
                     PlayButton.Click();
                     AddtoBookmark.Click();
                     driver.Navigate().Back();
@@ -78,39 +76,16 @@ namespace Prank_Sound_App.Pages
                 }
                 catch (Exception ex)
                 {
-                    HandleException("Hair Clipper 3", ex);
+                    Reusablemethods.HandleException("Hair Clipper 3", ex);
                 }
             }
             catch (Exception ex)
             {
-                HandleException("Hair Clipper Sound Test", ex);
+                Reusablemethods.HandleException("Hair Clipper Sound Test", ex);
             }
         }
 
-        private void HandleException(string action, Exception ex)
-        {
-            Console.WriteLine($"Exception occurred during {action}: {ex.Message}");
-            Test.Log(Status.Fail, $"Test failed during {action} due to: {ex.Message}");
-        }
 
-        private void HandleAd()
-        {
-            if (adHelper.IsAdPresent())
-            {
-                if (adHelper.IsCrossButtonPresent())
-                {
-                    adHelper.HandleAdCrossButton();
-                }
-                else if (adHelper.IsCloseButtonPresent())
-                {
-                    adHelper.HandleAdCloseButton();
-                }
-                else
-                {
-                    Console.WriteLine("No Ad found");
-                }
-            }
-        }
         IWebElement HairClipperMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper\"]");
         IWebElement HairClipper1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 1\"]");
         IWebElement HairClipper2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 2\"]");

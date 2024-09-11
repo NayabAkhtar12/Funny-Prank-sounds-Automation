@@ -13,6 +13,8 @@ namespace Prank_Sound_App.Pages
         private ExtentTest Test;
         ExtentReports Extent = new ExtentReports();
         private AdHelperC adHelper;
+        TouchAction touchAction;
+
         //private WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
         //Constructor
@@ -21,6 +23,7 @@ namespace Prank_Sound_App.Pages
             this.driver = driver;
             this.Test = test;
             this.adHelper = new AdHelperC(driver); // Initialize AdHelper with the correct driver type
+            touchAction = new TouchAction(driver);
         }
 
         public void SplashHandling2ndsessiont()
@@ -89,6 +92,43 @@ namespace Prank_Sound_App.Pages
             return driver.FindElement(MobileBy.AndroidUIAutomator(
                 $"new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"{text}\"))"));
         }
-        IWebElement Continue => driver.FindElementById("com.holyquran.alquran.majeed.qibla.prayertimes.tasbeeh.hisnulmuslim:id/StartButton");
+        public void WaitForElement(IWebElement element)
+        {
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            wait.Until(d => element.Displayed);
+        }
+
+        public void CBanner()
+        {
+
+            //**************Code to close c banner ***********
+            try
+            {
+
+                var x = 667;
+                var y = 850;
+
+                touchAction.Tap(x, y).Perform();
+
+                // new TouchAction(driver)
+                //.Tap(PointOption.Point(x, y))
+                //.Perform();
+                Console.WriteLine("Tap performed successfully at coordinates: (" + x + ", " + y + ")");
+            }
+            catch (Exception ex)
+            {
+                HandleException("C Banner nt closeable", ex);
+            }
+        }
+
+        public void Prank2ndSession()
+        {
+            Continue.Click();
+            Thread.Sleep(4000);
+            InterAdHandle();
+            Thread.Sleep(6000);
+
+        }
+        IWebElement Continue => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/getStarted");
     }
 }
