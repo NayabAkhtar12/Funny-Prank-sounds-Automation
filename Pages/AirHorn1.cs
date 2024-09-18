@@ -52,26 +52,15 @@ namespace Prank_Sound_App.Pages
                     Reusablemethods.HandleException("Air Horn 1", ex);
                 }
 
-                //  Loop.Click();
-
-                PlayButton.Click();
-                Thread.Sleep(3000);
-                // VolumeUp.Click();
-                //   VolumeDown.Click();
-                AddtoBookmark.Click();
-                driver.Navigate().Back();
-                //  Thread.Sleep(3000);
+                Reusablemethods.FartSoundPlayScreen();
 
                 //Air Horn2
-                AirHorn2.Click();
 
                 try
                 {
+                    AirHorn2.Click();
                     Reusablemethods.InterAdHandle();
-                    PlayButton.Click();
-                    Thread.Sleep(3000);
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
+                    Reusablemethods.SoundPlayScreen();
                 }
                 catch (Exception ex)
                 {
@@ -84,10 +73,7 @@ namespace Prank_Sound_App.Pages
                 try
                 {
                     Reusablemethods.InterAdHandle();
-                    PlayButton.Click();
-                    Thread.Sleep(3000);
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
+                    Reusablemethods.SoundPlayScreen();
 
                 }
                 catch (Exception ex)
@@ -103,10 +89,8 @@ namespace Prank_Sound_App.Pages
                 try
                 {
                     Reusablemethods.InterAdHandle();
-                    PlayButton.Click();
-                    Thread.Sleep(3000);
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
+                    Reusablemethods.SoundPlayScreen();
+
                     driver.Navigate().Back();
 
                 }

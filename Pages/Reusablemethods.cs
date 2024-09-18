@@ -55,25 +55,7 @@ namespace Prank_Sound_App.Pages
                 HandleException($"C Banner not Found on {context}", ex);
             }
         }
-        public void InterAdHandle()
-        {
-            try
-            {
-                if (adHelper.IsCrossButtonPresent())
-                {
-                    adHelper.HandleAdCrossButton();
-                }
 
-                else if (adHelper.IsCloseButtonPresent())
-                    adHelper.HandleAdCloseButton();
-                else
-                    Console.WriteLine("No Interstial  Ad found");
-            }
-            catch (Exception ex)
-            {
-                HandleException("99 names  inter Ad", ex);
-            }
-        }
 
         public void HandleException(string action, Exception ex)
         {
@@ -129,6 +111,149 @@ namespace Prank_Sound_App.Pages
             Thread.Sleep(6000);
 
         }
+
+        public void HandleInterstitialAdNew()
+        {
+            Thread.Sleep(35000);
+
+            try
+            {
+                By closeButton = By.XPath("//android.widget.TextView[@text='Close' or @text='Cerrar' or @text='Fechar' or @text='закрыть' or @text='CLOSE' or @text='ਬੰਦ ਕਰੋ' ]");
+                By crossButton = By.XPath("//android.widget.Button | //android.widget.ImageView[@content-desc='Ad closed']");
+                By handleAdButton = By.XPath("//android.widget.Button | //android.widget.ImageView[@content-desc='Ad closed'] | //android.widget.TextView[@text='Close' or @text='Cerrar' or @text='Fechar' or @text='закрыть' or @text='CLOSE' or @text='ਬੰਦ ਕਰੋ' ]");
+
+                // Attempt to find and click the ad close button
+                IWebElement adButton = driver.FindElement(handleAdButton);
+
+                if (adButton != null)
+                {
+                    adButton.Click();
+                }
+                else
+                {
+                    Console.WriteLine("No Interstitial Ad found");
+                }
+            }
+            catch (Exception ex)
+            {
+                HandleException("99 names inter Ad", ex);
+            }
+        }
+
+
+        public void InterAdHandleBackUp()
+        {
+            Thread.Sleep(40000);
+            try
+            {
+                if (adHelper.IsCrossButtonPresent())
+                {
+                    adHelper.HandleAdCrossButton();
+                }
+
+                else if (adHelper.IsCloseButtonPresent())
+                    adHelper.HandleAdCloseButton();
+                else
+                    Console.WriteLine("No Interstial  Ad found");
+            }
+            catch (Exception ex)
+            {
+                HandleException("  inter Ad", ex);
+            }
+        }
+
+        public void InterAdHandle()
+        {
+            Thread.Sleep(35000);
+            try
+            {
+                By handleAdButton = By.XPath(
+            "//android.widget.Button | " +
+            "//android.widget.ImageView[@content-desc='Ad closed'] | " +
+            "//android.widget.TextView[@text='Close' or @text='Cerrar' or @text='Fechar' or @text='закрыть' or @text='CLOSE' or @text='ਬੰਦ ਕਰੋ']"
+        );
+
+                // By closeButton = By.XPath("//android.widget.TextView[@text='Close' or @text='Cerrar' or @text='Fechar' or @text='закрыть' or @text='CLOSE' or @text='ਬੰਦ ਕਰੋ' ]");
+                // By crossButton = By.XPath("//android.widget.Button | //android.widget.ImageView[@content-desc='Ad closed']");
+                //    By handleAdButton = By.XPath("//android.widget.Button | //android.widget.ImageView[@content-desc='Ad closed'] | //android.widget.TextView[@text='Close' or @text='Cerrar' or @text='Fechar' or @text='закрыть' or @text='CLOSE' or @text='ਬੰਦ ਕਰੋ' ]");
+
+                IWebElement adButton = null;
+
+                // Check if any of the locators are present
+                if (IsElementPresent(handleAdButton))
+                {
+                    adButton = driver.FindElement(handleAdButton);
+                    if (adButton != null)
+                    {
+                        adButton.Click();
+                    }
+                    else
+                    {
+                        Console.WriteLine("No Interstitial Ad found");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No ad close button found");
+                }
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("No ad close button found");
+            }
+            catch (Exception ex)
+            {
+                HandleException("inter Ad", ex);
+            }
+        }
+
+        // Helper method to check if an element is present
+        private bool IsElementPresent(By locator)
+        {
+            try
+            {
+                return driver.FindElements(locator).Count > 0;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+
+        public void SoundPlayScreen()
+        {
+            try
+            {
+                PlayButton.Click();
+
+            }
+            catch (Exception ex)
+            {
+                HandleException("Fart Sound 1 Play Button", ex);
+            }
+            try
+            {
+                AddtoBookmark.Click();
+
+            }
+            catch (Exception ex)
+            {
+                HandleException("Add to Bookmark", ex);
+            }
+
+            try
+            {
+                driver.Navigate().Back();
+            }
+            catch (Exception ex)
+            {
+                HandleException("Fart Sound 1 Back Navigation", ex);
+            }
+        }
         IWebElement Continue => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/getStarted");
+        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
+        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+
+
     }
 }

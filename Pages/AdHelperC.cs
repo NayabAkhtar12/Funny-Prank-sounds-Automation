@@ -26,7 +26,7 @@ namespace Prank_Sound_App.Pages
             {
                 // Try to find the cross button
                 // By crossButtonLocator = By.XPath("//android.widget.TextView[@content-desc='close' or @text='×']");
-                By mergedLocator = By.XPath("//android.widget.Button");
+                By mergedLocator = By.XPath("//android.widget.Button | //android.widget.ImageView[@content-desc='Ad closed']");
 
                 IWebElement crossButton = wait.Until(ExpectedConditions.ElementToBeClickable(mergedLocator));
                 crossButton.Click();
@@ -94,9 +94,8 @@ namespace Prank_Sound_App.Pages
             try
             {
                 // Check for any known ad element by their text or other attributes
-                By adLocator1 = By.XPath("//android.widget.TextView[(@content-desc='close' or @text='×')] | //android.widget.Button");
-                By adLocator = By.XPath("//android.widget.Button");
-
+                //   By adLocator1 = By.XPath("//android.widget.TextView[(@content-desc='close' or @text='×')] | //android.widget.Button");
+                By adLocator = By.XPath("//android.widget.Button | //android.widget.ImageView[@content-desc='Ad closed']");
                 //  IWebElement adLocator1 = wait.Until(ExpectedConditions.ElementToBeClickable(adLocator));
                 driver.FindElement(adLocator);
 
