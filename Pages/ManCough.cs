@@ -24,7 +24,7 @@ namespace Prank_Sound_App.Pages
 
         }
 
-        public void MannCoughSoundTest()
+        public void MannCoughSoundTes1t()
         {
             Reusablemethods.ScrollToElementByText("Men Cough");
 
@@ -122,20 +122,48 @@ namespace Prank_Sound_App.Pages
                 Reusablemethods.HandleException("Men Cough Menu", ex);
             }
         }
+        public void MannCoughSoundTest()
+        {
+            // Scroll to Men Cough menu
+            Reusablemethods.ScrollToElementByText("Men Cough");
 
-        IWebElement ManCoughMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Men Cough\"]");
-        IWebElement ManCough1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 1\"]");
-        IWebElement ManCough2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 2\"]");
-        IWebElement ManCough3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 3\"]");
-        IWebElement ManCough4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 4\"]");
-        IWebElement ManCough5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 5\"]");
-        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+            // Click on the Men Cough menu and handle ads
+            Reusablemethods.ClickwithAd(ManCoughMenu, "ManCoughMenu");
 
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
-        IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
-        IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
-        IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
+            // Men Cough 1
+            Reusablemethods.ClickwithAd(ManCough1, "ManCough1");
+            Reusablemethods.SoundPlayScreen("Men Cough 1");
+
+            // Men Cough 2
+            Reusablemethods.ClickwithAd(ManCough2, "ManCough2");
+            Reusablemethods.SoundPlayScreen("Men Cough 2");
+
+            // Men Cough 3
+            Reusablemethods.ClickwithAd(ManCough3, "ManCough3");
+            Reusablemethods.SoundPlayScreen("Men Cough 3");
+
+            // Men Cough 4
+            Reusablemethods.ClickwithAd(ManCough4, "ManCough4");
+            Reusablemethods.SoundPlayScreen("Men Cough 4 and back to main screen");
+
+            // Navigate back to the main screen
+            Reusablemethods.NavigateBack("Main screen Back");
+        }
+
+        // Men Cough Menu and Sounds
+        public IWebElement? ManCoughMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Men Cough\"]"), "ManCoughMenu");
+        public IWebElement? ManCough1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 1\"]"), "ManCough1");
+        public IWebElement? ManCough2 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 2\"]"), "ManCough2");
+        public IWebElement? ManCough3 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 3\"]"), "ManCough3");
+        public IWebElement? ManCough4 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 4\"]"), "ManCough4");
+        public IWebElement? ManCough5 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Man Cough 5\"]"), "ManCough5");
+
+        // Common Buttons and Controls
+        public IWebElement? AddtoBookmark => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite"), "AddtoBookmark");
+        public IWebElement? VolumeUp => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"), "VolumeUp");
+        public IWebElement? VolumeDown => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"), "VolumeDown");
+        public IWebElement? Loop => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"), "Loop");
+        public IWebElement? PlayButton => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]"), "PlayButton");
 
     }
 }

@@ -21,7 +21,7 @@ namespace Prank_Sound_App.Pages
 
         }
 
-        public void FartSoundTest()
+        public void FartSoundTest1()
         {
 
 
@@ -69,7 +69,7 @@ namespace Prank_Sound_App.Pages
                     Reusablemethods.HandleException("Fart Sound 1", ex);
                 }
                 //Playscreen Actions
-                Reusablemethods.SoundPlayScreen();
+                Reusablemethods.SoundPlayScreen("sound play");
 
                 // Fart Sound 2
                 try
@@ -85,7 +85,7 @@ namespace Prank_Sound_App.Pages
                     }
 
                     //Playscreen Actions
-                    Reusablemethods.SoundPlayScreen();
+                    Reusablemethods.SoundPlayScreen("sound play");
 
                 }
                 catch (Exception ex)
@@ -108,7 +108,7 @@ namespace Prank_Sound_App.Pages
                     }
 
 
-                    Reusablemethods.SoundPlayScreen();
+                    Reusablemethods.SoundPlayScreen("sound play");
 
                 }
                 catch (Exception ex)
@@ -131,7 +131,7 @@ namespace Prank_Sound_App.Pages
                     }
 
 
-                    Reusablemethods.SoundPlayScreen();
+                    Reusablemethods.SoundPlayScreen("sound play");
 
 
                     try
@@ -154,35 +154,59 @@ namespace Prank_Sound_App.Pages
             }
         }
 
+        public void FartSoundTest()
+        {
+            // Start the Fart Sound test
+            //  Reusablemethods.ScrollToElementByText("Fart Sound");
+            Reusablemethods.ClickwithAd(FartSoundMenu, "FartSoundMenu");
+
+            // Fart Sound 1
+            Reusablemethods.ClickwithAd(FartSound1, "FartSound1");
+            Reusablemethods.SoundPlayScreen("Fart Sound 1");
+
+            // Fart Sound 2
+            Reusablemethods.ClickwithAd(FartSound2, "FartSound2");
+            Reusablemethods.SoundPlayScreen("Fart Sound 2");
+
+            // Fart Sound 3
+            Reusablemethods.ClickwithAd(FartSound3, "FartSound3");
+            Reusablemethods.SoundPlayScreen("Fart Sound 3");
+
+            // Fart Sound 4
+            Reusablemethods.ClickwithAd(FartSound4, "FartSound4");
+            Reusablemethods.SoundPlayScreen("Fart Sound 4 and back to main screen");
+
+            // Navigate back to the main screen
+            Reusablemethods.NavigateBack("Main screen Back");
+        }
 
 
 
-        IWebElement FartSoundMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound\"]");
-        IWebElement FartSound1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 1\"]");
-        IWebElement FartSound2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 2\"]");
-        IWebElement FartSound3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 3\"]");
-        IWebElement FartSound4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 4\"]");
-        IWebElement FartSound5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 5\"]");
-        IWebElement FartSound6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 6\"]");
-        IWebElement FartSound7 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 7\"]");
-        IWebElement FartSound8 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 8\"]");
-        IWebElement FartSound9 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 9\"]");
-        IWebElement FartSound10 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 10\"]");
-        IWebElement FartSound11 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 11\"]");
-        IWebElement FartSound12 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 12\"]");
-        IWebElement FartSound13 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 13\"]");
-        IWebElement FartSound14 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 14\"]");
-        IWebElement FartSound15 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 15\"]");
-        IWebElement FartSound16 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 16\"]");
-        IWebElement FartSound17 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 17\"]");
+        public IWebElement? FartSoundMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound\"]"), "FartSoundMenu");
+        public IWebElement? FartSound1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 1\"]"), "FartSound1");
+        public IWebElement? FartSound2 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 2\"]"), "FartSound2");
+        public IWebElement? FartSound3 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 3\"]"), "FartSound3");
+        public IWebElement? FartSound4 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 4\"]"), "FartSound4");
+        public IWebElement? FartSound5 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 5\"]"), "FartSound5");
+        public IWebElement? FartSound6 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 6\"]"), "FartSound6");
+        public IWebElement? FartSound7 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 7\"]"), "FartSound7");
+        public IWebElement? FartSound8 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 8\"]"), "FartSound8");
+        public IWebElement? FartSound9 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 9\"]"), "FartSound9");
+        public IWebElement? FartSound10 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 10\"]"), "FartSound10");
+        public IWebElement? FartSound11 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 11\"]"), "FartSound11");
+        public IWebElement? FartSound12 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 12\"]"), "FartSound12");
+        public IWebElement? FartSound13 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 13\"]"), "FartSound13");
+        public IWebElement? FartSound14 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 14\"]"), "FartSound14");
+        public IWebElement? FartSound15 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 15\"]"), "FartSound15");
+        public IWebElement? FartSound16 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 16\"]"), "FartSound16");
+        public IWebElement? FartSound17 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Fart Sound 17\"]"), "FartSound17");
 
-        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+        public IWebElement? AddtoBookmark => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite"), "AddtoBookmark");
+        public IWebElement? BackButton1 => Reusablemethods.FindElement(By.Id("Navigate up"), "BackButton1");
+        public IWebElement? VolumeUp => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"), "VolumeUp");
+        public IWebElement? VolumeDown => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"), "VolumeDown");
+        public IWebElement? Loop => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"), "Loop");
+        public IWebElement? PlayButton => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]"), "PlayButton");
 
-
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
-        IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
-        IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
-        IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
     }
 }

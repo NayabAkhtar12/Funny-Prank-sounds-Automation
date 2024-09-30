@@ -58,7 +58,6 @@ namespace Prank_Sound_App.Core
             }
             Extent.Flush();
 
-            ////}
         }
     }
 }

@@ -2,7 +2,6 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Support.UI;
 
 namespace Prank_Sound_App.Pages
 {
@@ -24,99 +23,47 @@ namespace Prank_Sound_App.Pages
 
         public void BurpSoundTest()
         {
+            // Scroll to Burp Sounds menu
             Reusablemethods.ScrollToElementByText("Burp Sounds");
 
-            ExtentTest test = Extent.CreateTest("Burp Sound Test");
-            try
-            {
-                // BurpSoundMenu
-                try
-                {
-                    BurpSoundMenu.Click();
-                    Reusablemethods.InterAdHandle();
-                }
-                catch (Exception ex)
-                {
-                    Reusablemethods.HandleException("Burp Sound Menu", ex);
-                }
+            // Click on the Burp Sound menu and handle ads
+            Reusablemethods.ClickwithAd(BurpSoundMenu, "BurpSoundMenu");
 
-                // Burp Sound 1
-                try
-                {
-                    BurpSound1.Click();
-                    Reusablemethods.InterAdHandle();
-                    PlayButton.Click();
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
-                }
-                catch (Exception ex)
-                {
-                    Reusablemethods.HandleException("Burp Sound 1", ex);
-                }
+            // Burp Sound 1
+            Reusablemethods.ClickwithAd(BurpSound1, "BurpSound1");
+            Reusablemethods.SoundPlayScreen("Burp Sound 1");
 
-                // Burp Sound 2
-                try
-                {
-                    BurpSound2.Click();
-                    Reusablemethods.InterAdHandle();
-                    PlayButton.Click();
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
-                }
-                catch (Exception ex)
-                {
-                    Reusablemethods.HandleException("Burp Sound 2", ex);
-                }
+            // Burp Sound 2
+            Reusablemethods.ClickwithAd(BurpSound2, "BurpSound2");
+            Reusablemethods.SoundPlayScreen("Burp Sound 2");
 
-                // Burp Sound 3
-                try
-                {
-                    BurpSound3.Click();
-                    Reusablemethods.InterAdHandle();
-                    PlayButton.Click();
-                    //   WaitForElement(AddtoBookmark);
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
-                    driver.Navigate().Back();
+            // Burp Sound 3
+            Reusablemethods.ClickwithAd(BurpSound3, "BurpSound3");
+            Reusablemethods.SoundPlayScreen("Burp Sound 3 and back to main screen");
 
-                }
-                catch (Exception ex)
-                {
-                    Reusablemethods.HandleException("Burp Sound 3", ex);
-                }
-            }
-            catch (Exception ex)
-            {
-                Reusablemethods.HandleException("Burp Sound Test", ex);
-            }
+            // Navigate back to the main screen
+            Reusablemethods.NavigateBack("Main screen Back");
         }
 
 
-        private void WaitForElement(IWebElement element)
-        {
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            wait.Until(d => element.Displayed);
-        }
-        IWebElement BurpSoundMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp Sounds\"]");
-        IWebElement BurpSound1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp Sound 1\"]");
-        IWebElement BurpSound2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp Sound 2\"]");
-        IWebElement BurpSound3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp Sound 3\"]");
-        IWebElement BurpSound4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 4\"]");
-        IWebElement BurpSound5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 5\"]");
-        IWebElement BurpSound6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 6\"]");
-        IWebElement BurpSound7 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 7\"]");
-        IWebElement BurpSound8 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 8\"]");
-        IWebElement BurpSound9 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 9\"]");
-        IWebElement BurpSound10 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 10\"]");
-        IWebElement BurpSound11 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 11\"]");
-        IWebElement BurpSound12 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 12\"]");
-        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+        // Burp Sounds Menu and Sounds
+        public IWebElement? BurpSoundMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp Sounds\"]"), "BurpSoundMenu");
+        public IWebElement? BurpSound1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp Sound 1\"]"), "BurpSound1");
+        public IWebElement? BurpSound2 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp Sound 2\"]"), "BurpSound2");
+        public IWebElement? BurpSound3 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp Sound 3\"]"), "BurpSound3");
+        public IWebElement? BurpSound4 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 4\"]"), "BurpSound4");
+        public IWebElement? BurpSound5 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 5\"]"), "BurpSound5");
+        public IWebElement? BurpSound6 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 6\"]"), "BurpSound6");
+        public IWebElement? BurpSound7 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 7\"]"), "BurpSound7");
+        public IWebElement? BurpSound8 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 8\"]"), "BurpSound8");
+        public IWebElement? BurpSound9 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 9\"]"), "BurpSound9");
+        public IWebElement? BurpSound10 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 10\"]"), "BurpSound10");
+        public IWebElement? BurpSound11 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 11\"]"), "BurpSound11");
+        public IWebElement? BurpSound12 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Burp 12\"]"), "BurpSound12");
 
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
-        IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
-        IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
-        IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
+        // Bookmark element
+        public IWebElement? AddtoBookmark => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite"), "AddtoBookmark");
+
 
     }
 }
