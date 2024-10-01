@@ -1,24 +1,34 @@
 ﻿using AventStack.ExtentReports;
+using AventStack.ExtentReports.Reporter;
+using NUnit.Framework;
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Android;
 using OpenQA.Selenium.Appium.Enums;
 
 namespace Prank_Sound_App.Core
 {
+    [TestFixture]
     public class TestInitiallize
     {
-        public AndroidDriver<AndroidElement> driver;
-        public ExtentReports Extent;
+        protected AndroidDriver<AndroidElement> driver;
+        public static ExtentReports Extent;
+        private static ExtentSparkReporter _reporter;
 
-
-        public TestInitiallize()
+        static TestInitiallize()
         {
-            //    var ExtentSparkReports = new ExtentSparkReporter("D:\\Automation-Projects");
+            string reportPath = @"D:\Reports\PrankSoundTestReport.html";
+            _reporter = new ExtentSparkReporter(reportPath);
             Extent = new ExtentReports();
-            // Extent.AttachReporter(ExtentSparkReports);
+            Extent.AttachReporter(_reporter);
         }
+        //public TestInitiallize()
+        //{
+        //    var ExtentSparkReports = new ExtentSparkReporter("D:\\Reports\\PrankReports");
+        //    Extent = new ExtentReports();
+        //    Extent.AttachReporter(ExtentSparkReports);
+        //}
 
-        [TestInitialize]
+        [SetUp]
         public void Setup()
         {
             try
@@ -40,7 +50,7 @@ namespace Prank_Sound_App.Core
             }
         }
 
-        [TestCleanup]
+        [TearDown]
         public void CleanUp()
         {
             try

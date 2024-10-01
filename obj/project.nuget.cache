@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "JcZ68aiS8p3tvTDUs0G4XJyKoHg/8uoEGQ9xYJLHIqGlQS4MPBs/SVpi1/+q2CULgpxyQk0McxpC529tgupj/w==",
+  "dgSpecHash": "xYM8hURAwmlNzPsjHNB+xpt7iLXHPu02/gnKn1pvdWDRayt+SDB1/7EUCqHCnjzXrKORDxN01KF5DHGopqhGwQ==",
   "success": true,
   "projectFilePath": "D:\\Automation-Projects\\PrankSoundsApp-Automation\\Prank_Sounds_App\\Prank_Sound_App.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,6 @@
     "C:\\Users\\nayab\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.6.0\\microsoft.testplatform.objectmodel.17.6.0.nupkg.sha512",
     "C:\\Users\\nayab\\.nuget\\packages\\microsoft.testplatform.testhost\\17.6.0\\microsoft.testplatform.testhost.17.6.0.nupkg.sha512",
     "C:\\Users\\nayab\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
-    "C:\\Users\\nayab\\.nuget\\packages\\mstest.testadapter\\3.0.4\\mstest.testadapter.3.0.4.nupkg.sha512",
     "C:\\Users\\nayab\\.nuget\\packages\\mstest.testframework\\3.0.4\\mstest.testframework.3.0.4.nupkg.sha512",
     "C:\\Users\\nayab\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
     "C:\\Users\\nayab\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",

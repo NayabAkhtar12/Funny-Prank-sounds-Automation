@@ -21,83 +21,6 @@ namespace Prank_Sound_App.Pages
 
         }
 
-        public void WomenCoughSoundTest1()
-        {
-            Reusablemethods.ScrollToElementByText("Women Cough");
-
-            ExtentTest test = Extent.CreateTest("NearBy Places Report 1");
-            try
-            {
-                // Women Cough Menu
-                WoMenCoughMenu.Click();
-
-                Reusablemethods.InterAdHandle();
-
-                //Code to close Collapsible Banner by clicking on Collapse Icon
-                Reusablemethods.HandleCBanner("Women cough");
-
-
-                // Women Cough 1
-                try
-                {
-                    WoMenCough1.Click();
-
-                    Reusablemethods.InterAdHandle();
-
-
-                    PlayButton.Click();
-                    Thread.Sleep(3000);
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
-                }
-                catch (Exception ex)
-                {
-                    Reusablemethods.HandleException("Women Cough 1", ex);
-                }
-
-                // Women Cough 2
-                try
-                {
-                    WoMenCough2.Click();
-
-                    Reusablemethods.InterAdHandle();
-
-
-                    PlayButton.Click();
-                    Thread.Sleep(3000);
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
-                }
-                catch (Exception ex)
-                {
-                    Reusablemethods.HandleException("Women Cough 2", ex);
-                }
-
-                // Women Cough 3
-                try
-                {
-                    WoMenCough3.Click();
-
-                    Reusablemethods.InterAdHandle();
-
-
-                    PlayButton.Click();
-                    Thread.Sleep(3000);
-                    AddtoBookmark.Click();
-                    driver.Navigate().Back();
-                    driver.Navigate().Back();
-                }
-                catch (Exception ex)
-                {
-                    Reusablemethods.HandleException("Women Cough 3", ex);
-                }
-            }
-            catch (Exception ex)
-            {
-                Reusablemethods.HandleException("Women Cough Menu", ex);
-            }
-
-        }
 
         public void WomenCoughSoundTest()
         {
@@ -106,7 +29,7 @@ namespace Prank_Sound_App.Pages
 
             // Click on the Women Cough menu and handle ads
             Reusablemethods.ClickwithAd(WoMenCoughMenu, "WoMenCoughMenu");
-            Reusablemethods.HandleCBanner("Women cough");
+            //   Reusablemethods.HandleCBanner("Women cough");
 
             // Women Cough 1
             Reusablemethods.ClickwithAd(WoMenCough1, "WoMenCough1");

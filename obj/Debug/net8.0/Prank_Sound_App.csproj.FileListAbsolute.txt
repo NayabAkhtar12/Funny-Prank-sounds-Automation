@@ -1,9 +1,3 @@
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.csproj.AssemblyReference.cache
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.GeneratedMSBuildEditorConfig.editorconfig
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.AssemblyInfoInputs.cache
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.AssemblyInfo.cs
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.csproj.CoreCompileInputs.cache
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.sourcelink.json
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\testhost.dll
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\testhost.exe
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\NUnit3.TestAdapter.dll
@@ -12,9 +6,6 @@ D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\nunit.engine.api.dll
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\nunit.engine.core.dll
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\testcentric.engine.metadata.dll
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\Microsoft.TestPlatform.AdapterUtilities.dll
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\Prank_Sound_App.deps.json
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\Prank_Sound_App.runtimeconfig.json
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\Prank_Sound_App.dll
@@ -156,6 +147,12 @@ D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.csproj.AssemblyReference.cache
+D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.GeneratedMSBuildEditorConfig.editorconfig
+D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.AssemblyInfoInputs.cache
+D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.AssemblyInfo.cs
+D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.csproj.CoreCompileInputs.cache
+D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.sourcelink.json
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.csproj.CopyComplete
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\Prank_Sound_App.dll
 D:\Automation-Projects\PrankSoundsApp-Automation\Prank_Sounds_App\obj\Debug\net8.0\refint\Prank_Sound_App.dll

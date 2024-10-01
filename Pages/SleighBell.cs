@@ -20,7 +20,7 @@ namespace Prank_Sound_App.Pages
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
-        public void SleighBellSoundTest()
+        public void SleighBellSoundTest1()
         {
             Reusablemethods.ScrollToElementByText("Sleigh Bell");
 
@@ -86,23 +86,56 @@ namespace Prank_Sound_App.Pages
                 Reusablemethods.HandleException("Sleigh Bell Sound Test", ex);
             }
         }
+        public void SleighBellSoundTest()
+        {
+            // Scroll to Sleigh Bell menu
+            Reusablemethods.ScrollToElementByText("Sleigh Bell");
 
+            // Click on the Sleigh Bell menu and handle ads
+            Reusablemethods.ClickwithAd(SleighBellMenu, "SleighBellMenu");
 
-        IWebElement SleighBellMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell\"]");
-        IWebElement SleighBell1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 1\"]");
-        IWebElement SleighBell2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 2\"]");
-        IWebElement SleighBell3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 3\"]");
-        IWebElement SleighBell4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 4\"]");
-        IWebElement SleighBell5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 5\"]");
-        IWebElement SleighBell6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 6\"]");
-        IWebElement SleighBell7 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 7\"]");
+            // Sleigh Bell 1
+            Reusablemethods.ClickwithAd(SleighBell1, "SleighBell1");
+            Reusablemethods.SoundPlayScreen("Sleigh Bell 1");
 
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
-        IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
-        IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
-        IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
-        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+            // Sleigh Bell 2
+            Reusablemethods.ClickwithAd(SleighBell2, "SleighBell2");
+            Reusablemethods.SoundPlayScreen("Sleigh Bell 2");
+
+            // Sleigh Bell 3
+            Reusablemethods.ClickwithAd(SleighBell3, "SleighBell3");
+            Reusablemethods.SoundPlayScreen("Sleigh Bell 3 and back to main screen");
+
+            // Navigate back to the main screen
+            Reusablemethods.NavigateBack("Main screen Back");
+        }
+
+        IWebElement? SleighBellMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell\"]"), "SleighBellMenu");
+
+        IWebElement? SleighBell1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 1\"]"), "SleighBell1");
+
+        IWebElement? SleighBell2 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 2\"]"), "SleighBell2");
+
+        IWebElement? SleighBell3 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 3\"]"), "SleighBell3");
+
+        IWebElement? SleighBell4 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 4\"]"), "SleighBell4");
+
+        IWebElement? SleighBell5 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 5\"]"), "SleighBell5");
+
+        IWebElement? SleighBell6 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 6\"]"), "SleighBell6");
+
+        IWebElement? SleighBell7 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Sleigh Bell 7\"]"), "SleighBell7");
+
+        IWebElement? VolumeUp => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"), "VolumeUp");
+
+        IWebElement? VolumeDown => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"), "VolumeDown");
+
+        IWebElement? Loop => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"), "Loop");
+
+        IWebElement? PlayButton => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]"), "PlayButton");
+
+        IWebElement? AddtoBookmark => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite"), "AddtoBookmark");
+
 
     }
 }

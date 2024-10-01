@@ -21,7 +21,7 @@ namespace Prank_Sound_App.Pages
 
         }
 
-        public void BreakingSoundTest()
+        public void BreakingSoundTest1()
         {
             Reusablemethods.ScrollToElementByText("Breaking");
 
@@ -87,21 +87,56 @@ namespace Prank_Sound_App.Pages
                 Reusablemethods.HandleException("Breaking Sound Test", ex);
             }
         }
+        public void BreakingSoundTest()
+        {
+            // Scroll to Breaking Sounds menu
+            Reusablemethods.ScrollToElementByText("Breaking");
 
-        IWebElement BreakingSoundMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking\"]");
-        IWebElement BreakingSound1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 1\"]");
-        IWebElement BreakingSound2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 2\"]");
-        IWebElement BreakingSound3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 3\"]");
-        IWebElement BreakingSound4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 4\"]");
-        IWebElement BreakingSound5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 5\"]");
-        IWebElement BreakingSound6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 6\"]");
+            // Click on the Breaking Sound menu and handle ads
+            Reusablemethods.ClickwithAd(BreakingSoundMenu, "BreakingSoundMenu");
 
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
-        IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
-        IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
-        IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
-        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+            // Breaking Sound 1
+            Reusablemethods.ClickwithAd(BreakingSound1, "BreakingSound1");
+            Reusablemethods.SoundPlayScreen("Breaking Sound 1");
+
+            // Breaking Sound 2
+            Reusablemethods.ClickwithAd(BreakingSound2, "BreakingSound2");
+            Reusablemethods.SoundPlayScreen("Breaking Sound 2");
+
+            // Breaking Sound 3
+            Reusablemethods.ClickwithAd(BreakingSound3, "BreakingSound3");
+            Reusablemethods.SoundPlayScreen("Breaking Sound 3 and back to main screen");
+
+            // Navigate back to the main screen
+            Reusablemethods.NavigateBack("Main screen Back");
+        }
+
+        IWebElement? BreakingSoundMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking\"]"), "BreakingSoundMenu");
+
+        IWebElement? BreakingSound1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 1\"]"), "BreakingSound1");
+
+        IWebElement? BreakingSound2 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 2\"]"), "BreakingSound2");
+
+        IWebElement? BreakingSound3 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 3\"]"), "BreakingSound3");
+
+        IWebElement? BreakingSound4 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 4\"]"), "BreakingSound4");
+
+        IWebElement? BreakingSound5 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 5\"]"), "BreakingSound5");
+
+        IWebElement? BreakingSound6 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Breaking 6\"]"), "BreakingSound6");
+
+        IWebElement? BackButton1 => Reusablemethods.FindElement(By.Id("Navigate up"), "BackButton1");
+
+        IWebElement? VolumeUp => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"), "VolumeUp");
+
+        IWebElement? VolumeDown => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"), "VolumeDown");
+
+        IWebElement? Loop => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"), "Loop");
+
+        IWebElement? PlayButton => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]"), "PlayButton");
+
+        IWebElement? AddtoBookmark => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite"), "AddtoBookmark");
+
 
     }
 }

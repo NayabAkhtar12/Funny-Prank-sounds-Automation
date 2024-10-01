@@ -19,7 +19,7 @@ namespace Prank_Sound_App.Pages
             Reusablemethods = new Reusablemethods(driver, test);
         }
 
-        public void HairClipperSoundTest()
+        public void HairClipperSoundTest1()
         {
             Reusablemethods.ScrollToElementByText("Hair Clipper");
             ExtentTest test = Extent.CreateTest("Hair Clipper Sound Test");
@@ -84,26 +84,61 @@ namespace Prank_Sound_App.Pages
                 Reusablemethods.HandleException("Hair Clipper Sound Test", ex);
             }
         }
+        public void HairClipperSoundTest()
+        {
+            // Scroll to Hair Clipper menu
+            Reusablemethods.ScrollToElementByText("Hair Clipper");
+
+            // Click on the Hair Clipper menu and handle ads
+            Reusablemethods.ClickwithAd(HairClipperMenu, "HairClipperMenu");
+
+            // Hair Clipper 1
+            Reusablemethods.ClickwithAd(HairClipper1, "HairClipper1");
+            Reusablemethods.SoundPlayScreen("Hair Clipper 1");
+
+            // Hair Clipper 2
+            Reusablemethods.ClickwithAd(HairClipper2, "HairClipper2");
+            Reusablemethods.SoundPlayScreen("Hair Clipper 2");
+
+            // Hair Clipper 3
+            Reusablemethods.ClickwithAd(HairClipper3, "HairClipper3");
+            Reusablemethods.SoundPlayScreen("Hair Clipper 3 and back to main screen");
+
+            // Navigate back to the main screen
+            Reusablemethods.NavigateBack("Main screen Back");
+        }
 
 
-        IWebElement HairClipperMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper\"]");
-        IWebElement HairClipper1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 1\"]");
-        IWebElement HairClipper2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 2\"]");
-        IWebElement HairClipper3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 3\"]");
-        IWebElement HairClipper4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 4\"]");
-        IWebElement HairClipper5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 5\"]");
-        IWebElement HairClipper6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 6\"]");
-        IWebElement HairClipper7 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 7\"]");
-        IWebElement HairClipper8 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 8\"]");
-        IWebElement HairClipper9 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 9\"]");
+        IWebElement? HairClipperMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper\"]"), "HairClipperMenu");
 
+        IWebElement? HairClipper1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 1\"]"), "HairClipper1");
 
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
-        IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
-        IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
-        IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
-        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+        IWebElement? HairClipper2 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 2\"]"), "HairClipper2");
+
+        IWebElement? HairClipper3 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 3\"]"), "HairClipper3");
+
+        IWebElement? HairClipper4 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 4\"]"), "HairClipper4");
+
+        IWebElement? HairClipper5 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 5\"]"), "HairClipper5");
+
+        IWebElement? HairClipper6 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 6\"]"), "HairClipper6");
+
+        IWebElement? HairClipper7 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 7\"]"), "HairClipper7");
+
+        IWebElement? HairClipper8 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 8\"]"), "HairClipper8");
+
+        IWebElement? HairClipper9 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Hair Clipper 9\"]"), "HairClipper9");
+
+        IWebElement? VolumeUp => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"), "VolumeUp");
+
+        IWebElement? VolumeDown => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"), "VolumeDown");
+
+        IWebElement? Loop => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"), "Loop");
+
+        IWebElement? PlayButton => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]"), "PlayButton");
+
+        IWebElement? AddtoBookmark => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite"), "AddtoBookmark");
+
 
     }
 }

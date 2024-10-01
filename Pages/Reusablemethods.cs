@@ -93,9 +93,6 @@ namespace Prank_Sound_App.Pages
 
         }
 
-
-
-
         public void Swipe()
         {
             TouchAction act = new TouchAction(driver);
@@ -232,7 +229,73 @@ namespace Prank_Sound_App.Pages
             }
         }
 
+        public void NavigateBack(string Action)
+
+        {
+            try
+            {
+                driver.Navigate().Back();
+            }
+            catch (Exception ex)
+            {
+                HandleException(Action, ex);
+            }
+        }
         public void ClickwithAd(IWebElement? element, string elementName)
+        {
+            bool isClicked = false;
+
+            // Attempt to click the element
+            try
+            {
+                if (element != null)
+                {
+                    element.Click();
+                    isClicked = true; // Set to true if the click is successful
+                }
+                else
+                {
+                    // Log and handle if the element is null (not found)
+                    HandleException(elementName + " not found", new NoSuchElementException("Element not found"));
+                    return; // Exit if element is not found
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception and do not throw it to allow continued execution
+                HandleException(elementName + " click failed", ex);
+                return; // Exit if the click fails
+            }
+
+            // Handle the interstitial ad if the click was successful
+
+
+            try
+            {
+                InterAdHandle();
+            }
+            catch (Exception ex)
+            {
+                HandleException("Handling interstitial ad for " + elementName, ex);
+                // Do not return here; allow the flow to continue
+            }
+
+
+
+            //if (isClicked)
+            //{
+            //    try
+            //    {
+            //        InterAdHandle();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        HandleException("Handling interstitial ad for " + elementName, ex);
+            //        // Do not return here; allow the flow to continue
+            //    }
+            //}
+        }
+        public void ClickwithAd1(IWebElement? element, string elementName)
         {
             try
             {
@@ -254,18 +317,7 @@ namespace Prank_Sound_App.Pages
 
 
         }
-        public void NavigateBack(string Action)
 
-        {
-            try
-            {
-                driver.Navigate().Back();
-            }
-            catch (Exception ex)
-            {
-                HandleException(Action, ex);
-            }
-        }
 
         public void ElementClick(IWebElement? element, string elementName)
         {

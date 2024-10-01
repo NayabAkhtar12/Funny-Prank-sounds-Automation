@@ -30,32 +30,45 @@ namespace Prank_Sound_App.Pages
             Reusablemethods.SoundPlayScreen("Air Horn 1");
 
             //Air Horn 2
-            Reusablemethods.ClickwithAd(AirHorn1, "AirHorn1");
-            Reusablemethods.SoundPlayScreen("Air Horn 1");
-
-            //Air Horn 3
-            Reusablemethods.ClickwithAd(AirHorn2, "AirHorn2");
+            Reusablemethods.ClickwithAd(AirHorn2, "AirHorn1");
             Reusablemethods.SoundPlayScreen("Air Horn 2");
 
+            //Air Horn 3
+            Reusablemethods.ClickwithAd(AirHorn3, "AirHorn3");
+            Reusablemethods.SoundPlayScreen("Air Horn 3");
+
             //Air Horn 4
-            Reusablemethods.ClickwithAd(AirHorn1, "AirHorn3");
-            Reusablemethods.SoundPlayScreen("Air Horn 3 and back to air horn main screen");
+            Reusablemethods.ClickwithAd(AirHorn4, "AirHorn4");
+            Reusablemethods.SoundPlayScreen("Air Horn 4 and back to air horn main screen");
             Reusablemethods.NavigateBack("Main screen Back ");
         }
 
-        IWebElement AirHornMenu => driver.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Air Horn\"]"));
-        IWebElement VolumeUp => driver.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"));
-        IWebElement VolumeDown => driver.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"));
-        IWebElement Loop => driver.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"));
-        IWebElement AirHorn1 => driver.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Air Horn 1\"]"));
-        IWebElement AirHorn2 => driver.FindElement(By.XPath("(//android.view.ViewGroup[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/content_container\"])[2]"));
-        IWebElement AirHorn3 => driver.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[3]"));
-        IWebElement AirHorn4 => driver.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[4]"));
-        IWebElement AirHorn5 => driver.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[5]"));
-        IWebElement AirHorn6 => driver.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[6]"));
-        IWebElement AirHorn7 => driver.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[7]"));
-        IWebElement AirHorn8 => driver.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[8]"));
-        IWebElement AirHorn9 => driver.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[9]"));
+        IWebElement? AirHornMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Air Horn\"]"), "AirHornMenu");
+
+        IWebElement? VolumeUp => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"), "VolumeUp");
+
+        IWebElement? VolumeDown => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"), "VolumeDown");
+
+        IWebElement? Loop => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"), "Loop");
+
+        IWebElement? AirHorn1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Air Horn 1\"]"), "AirHorn1");
+
+        IWebElement? AirHorn2 => Reusablemethods.FindElement(By.XPath("(//android.view.ViewGroup[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/content_container\"])[2]"), "AirHorn2");
+
+        IWebElement? AirHorn3 => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[3]"), "AirHorn3");
+
+        IWebElement? AirHorn4 => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[4]"), "AirHorn4");
+
+        IWebElement? AirHorn5 => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[5]"), "AirHorn5");
+
+        IWebElement? AirHorn6 => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[6]"), "AirHorn6");
+
+        IWebElement? AirHorn7 => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[7]"), "AirHorn7");
+
+        IWebElement? AirHorn8 => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[8]"), "AirHorn8");
+
+        IWebElement? AirHorn9 => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[9]"), "AirHorn9");
+
 
     }
 }

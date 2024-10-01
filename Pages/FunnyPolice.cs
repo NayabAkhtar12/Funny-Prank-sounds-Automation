@@ -21,7 +21,7 @@ namespace Prank_Sound_App.Pages
 
         }
 
-        public void FunnyPoliceTest()
+        public void FunnyPoliceTest1()
         {
             Reusablemethods.ScrollToElementByText("Funny Police");
 
@@ -87,24 +87,56 @@ namespace Prank_Sound_App.Pages
                 Reusablemethods.HandleException("Funny Police Sound Test", ex);
             }
         }
+        public void FunnyPoliceTest()
+        {
+            // Scroll to Funny Police menu
+            Reusablemethods.ScrollToElementByText("Funny Police");
 
+            // Click on the Funny Police menu and handle ads
+            Reusablemethods.ClickwithAd(FunnyPoliceMenu, "FunnyPoliceMenu");
 
+            // Funny Police 1
+            Reusablemethods.ClickwithAd(FunnyPolice1, "FunnyPolice1");
+            Reusablemethods.SoundPlayScreen("Funny Police 1");
 
+            // Funny Police 2
+            Reusablemethods.ClickwithAd(FunnyPolice2, "FunnyPolice2");
+            Reusablemethods.SoundPlayScreen("Funny Police 2");
 
-        IWebElement FunnyPoliceMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police\"]");
-        IWebElement FunnyPolice1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 1\"]");
-        IWebElement FunnyPolice2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 2\"]");
-        IWebElement FunnyPolice3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 3\"]");
-        IWebElement FunnyPolice4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 4\"]");
-        IWebElement FunnyPolice5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 5\"]");
-        IWebElement FunnyPolice6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 6\"]");
+            // Funny Police 3
+            Reusablemethods.ClickwithAd(FunnyPolice3, "FunnyPolice3");
+            Reusablemethods.SoundPlayScreen("Funny Police 3 and back to main screen");
 
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
-        IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
-        IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
-        IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
-        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+            // Navigate back to the main screen
+            Reusablemethods.NavigateBack("Main screen Back");
+        }
+
+        public IWebElement? FunnyPoliceMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police\"]"), "FunnyPoliceMenu");
+
+        public IWebElement? FunnyPolice1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 1\"]"), "FunnyPolice1");
+
+        public IWebElement? FunnyPolice2 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 2\"]"), "FunnyPolice2");
+
+        public IWebElement? FunnyPolice3 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 3\"]"), "FunnyPolice3");
+
+        public IWebElement? FunnyPolice4 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 4\"]"), "FunnyPolice4");
+
+        public IWebElement? FunnyPolice5 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 5\"]"), "FunnyPolice5");
+
+        public IWebElement? FunnyPolice6 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Funny Police 6\"]"), "FunnyPolice6");
+
+        public IWebElement? BackButton1 => Reusablemethods.FindElement(By.Id("Navigate up"), "BackButton1");
+
+        public IWebElement? VolumeUp => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"), "VolumeUp");
+
+        public IWebElement? VolumeDown => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"), "VolumeDown");
+
+        public IWebElement? Loop => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"), "Loop");
+
+        public IWebElement? PlayButton => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]"), "PlayButton");
+
+        public IWebElement? AddtoBookmark => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite"), "AddtoBookmark");
+
 
     }
 }

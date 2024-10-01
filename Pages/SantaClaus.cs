@@ -20,7 +20,7 @@ namespace Prank_Sound_App.Pages
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
-        public void SantaClausSoundTest()
+        public void SantaClausSoundTest1()
         {
             Reusablemethods.ScrollToElementByText("Santa Claus");
 
@@ -87,21 +87,55 @@ namespace Prank_Sound_App.Pages
             }
         }
 
+        public void SantaClausSoundTest()
+        {
+            // Scroll to Santa Claus menu
+            Reusablemethods.ScrollToElementByText("Santa Claus");
 
-        IWebElement SantaClausMenu => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus\"]");
-        IWebElement SantaClaus1 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 1\"]");
-        IWebElement SantaClaus2 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 2\"]");
-        IWebElement SantaClaus3 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 3\"]");
-        IWebElement SantaClaus4 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 4\"]");
-        IWebElement SantaClaus5 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 5\"]");
-        IWebElement SantaClaus6 => driver.FindElementByXPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 6\"]");
+            // Click on the Santa Claus menu and handle ads
+            Reusablemethods.ClickwithAd(SantaClausMenu, "SantaClausMenu");
 
-        IWebElement BackButton1 => driver.FindElementByAccessibilityId("Navigate up");
-        IWebElement VolumeUp => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus");
-        IWebElement VolumeDown => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus");
-        IWebElement Loop => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck");
-        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
-        IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+            // Santa Claus 1
+            Reusablemethods.ClickwithAd(SantaClaus1, "SantaClaus1");
+            Reusablemethods.SoundPlayScreen("Santa Claus 1");
+
+            // Santa Claus 2
+            Reusablemethods.ClickwithAd(SantaClaus2, "SantaClaus2");
+            Reusablemethods.SoundPlayScreen("Santa Claus 2");
+
+            // Santa Claus 3
+            Reusablemethods.ClickwithAd(SantaClaus3, "SantaClaus3");
+            Reusablemethods.SoundPlayScreen("Santa Claus 3 and back to main screen");
+
+            // Navigate back to the main screen
+            Reusablemethods.NavigateBack("Main screen Back");
+        }
+
+
+        IWebElement? SantaClausMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus\"]"), "SantaClausMenu");
+
+        IWebElement? SantaClaus1 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 1\"]"), "SantaClaus1");
+
+        IWebElement? SantaClaus2 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 2\"]"), "SantaClaus2");
+
+        IWebElement? SantaClaus3 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 3\"]"), "SantaClaus3");
+
+        IWebElement? SantaClaus4 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 4\"]"), "SantaClaus4");
+
+        IWebElement? SantaClaus5 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 5\"]"), "SantaClaus5");
+
+        IWebElement? SantaClaus6 => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Santa Claus 6\"]"), "SantaClaus6");
+
+        IWebElement? VolumeUp => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivolplus"), "VolumeUp");
+
+        IWebElement? VolumeDown => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivvolminus"), "VolumeDown");
+
+        IWebElement? Loop => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/sCheck"), "Loop");
+
+        IWebElement? PlayButton => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]"), "PlayButton");
+
+        IWebElement? AddtoBookmark => Reusablemethods.FindElement(By.Id("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite"), "AddtoBookmark");
+
 
     }
 }
