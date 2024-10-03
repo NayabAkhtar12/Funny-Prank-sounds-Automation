@@ -10,7 +10,7 @@ namespace Prank_Sound_App.Core
     [TestFixture]
     public class TestInitiallize
     {
-        protected AndroidDriver<AndroidElement> driver;
+        protected AndroidDriver<AndroidElement>? driver;
         public static ExtentReports Extent;
         private static ExtentSparkReporter _reporter;
 

@@ -8,29 +8,28 @@ namespace Prank_Sound_App.Pages
     class AirHorn
     {
         private AppiumDriver<AndroidElement> driver;
-        private ExtentTest Test;
-        ExtentReports Extent = new ExtentReports();
         Reusablemethods Reusablemethods;
 
         //Constructor
         public AirHorn(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
-            this.Test = test;
             Reusablemethods = new Reusablemethods(driver, test);
 
         }
 
         public void AirHornSoundTest()
         {
+            Reusablemethods.SplashHandling2ndsessiont();
             //Air Horn 1
             Reusablemethods.ScrollToElementByText("Air Horn");
             Reusablemethods.ClickwithAd(AirHornMenu, "AirHornMenu");
             Reusablemethods.ClickwithAd(AirHorn1, "AirHorn1");
             Reusablemethods.SoundPlayScreen("Air Horn 1");
 
+
             //Air Horn 2
-            Reusablemethods.ClickwithAd(AirHorn2, "AirHorn1");
+            Reusablemethods.ClickwithAd(AirHorn2, "AirHorn2");
             Reusablemethods.SoundPlayScreen("Air Horn 2");
 
             //Air Horn 3
@@ -42,6 +41,7 @@ namespace Prank_Sound_App.Pages
             Reusablemethods.SoundPlayScreen("Air Horn 4 and back to air horn main screen");
             Reusablemethods.NavigateBack("Main screen Back ");
         }
+
 
         IWebElement? AirHornMenu => Reusablemethods.FindElement(By.XPath("//android.widget.TextView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/name\" and @text=\"Air Horn\"]"), "AirHornMenu");
 
@@ -69,6 +69,7 @@ namespace Prank_Sound_App.Pages
 
         IWebElement? AirHorn9 => Reusablemethods.FindElement(By.XPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[9]"), "AirHorn9");
 
+        IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
 
     }
 }

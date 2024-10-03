@@ -413,7 +413,9 @@ namespace Prank_Sound_App.Pages
             try
             {
                 // Click the Play button
-                ElementClick(PlayButton, $"{SoundName} Play Button");
+                LongPressAndRelease(PlayButton, 4);
+                //ElementClick(PlayButton, $"{SoundName} Play Button");
+
                 Thread.Sleep(2000);
 
                 // Click the Add to Bookmark button
@@ -435,10 +437,42 @@ namespace Prank_Sound_App.Pages
         }
 
 
+        public void LongPressAndRelease(IWebElement? Soundbtn, int durationInMilliseconds)
+        {
+            try
+            {
+                touchAction = new TouchAction(driver);
+                touchAction.LongPress(Soundbtn);
+                touchAction.Perform();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Failed to perform long press: {ex.Message}");
+                HandleException($"LongPress Not Performed on {Soundbtn}", ex);
+            }
+
+            //try
+            //{
+
+            //    TouchAction TA = new TouchAction(driver);
+            //    TA.Press(ElementOption.Element(Soundbtn))
+            //         .Wait(durationInMilliseconds)
+            //         .Release()
+            //         .Perform();
+
+            //    Console.WriteLine($"Successfully performed long press on element: {Soundbtn}");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Failed to perform long press: {ex.Message}");
+            //    throw;
+            //}
+        }
         IWebElement PlayButton => driver.FindElementByXPath("(//android.widget.ImageView[@resource-id=\"com.pranksound.fartsound.hornsound.haircut.soundprank:id/icon\"])[1]");
 
         IWebElement AddtoBookmark => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
-        IWebElement Continue => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/ivFavourite");
+        IWebElement Continue => driver.FindElementById("com.pranksound.fartsound.hornsound.haircut.soundprank:id/getStarted");
 
     }
 }

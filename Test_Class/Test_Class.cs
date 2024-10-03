@@ -92,7 +92,7 @@ namespace Prank_Sound_App.Test_Class
             CarHorn.CarHornSoundTest();
         }
 
-        GunSounds GunSounds;
+        GunSounds? GunSounds;
 
         [Test, Order(10)]
         public void GunSoundsTest()
