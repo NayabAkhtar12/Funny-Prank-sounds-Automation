@@ -35,9 +35,11 @@ namespace Prank_Sound_App.Core
             {
                 AppiumOptions cap = new AppiumOptions();
                 cap.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
-                cap.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Vivo Y03");
+                cap.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Pixel 5 API 34");
+                //    cap.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Vivo Y03");
+
                 //    cap.AddAdditionalCapability(MobileCapabilityType.Udid, "e7c7d60c");
-                cap.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "11");
+                cap.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "14");
                 cap.AddAdditionalCapability("appium:automationName", AutomationName.AndroidUIAutomator2);
                 driver = new AndroidDriver<AndroidElement>(new Uri("http://192.168.100.14:4723/"), cap, TimeSpan.FromSeconds(180));
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
