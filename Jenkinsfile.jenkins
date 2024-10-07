@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    triggers {
+        githubPush() // This triggers the build on GitHub push
+    }
+    stages {
+        stage('Build') {
+            steps {
+                // Steps to build the project
+                echo "Building Project"
+            }
+        }
+        stage('Test') {
+            steps {
+                // Steps to run tests
+                echo "Running Tests"
+                sh 'run-tests-command'
+            }
+        }
+    }
+}
