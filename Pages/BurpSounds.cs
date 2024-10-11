@@ -8,15 +8,12 @@ namespace Prank_Sound_App.Pages
     class BurpSounds
     {
         private AppiumDriver<AndroidElement> driver;
-        private ExtentTest Test;
-        ExtentReports Extent = new ExtentReports();
         Reusablemethods Reusablemethods;
 
         //Constructor
         public BurpSounds(AppiumDriver<AndroidElement> driver, ExtentTest test)
         {
             this.driver = driver;
-            this.Test = test;
             Reusablemethods = new Reusablemethods(driver, test);
 
         }

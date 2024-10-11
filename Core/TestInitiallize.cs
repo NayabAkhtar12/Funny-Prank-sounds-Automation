@@ -21,12 +21,7 @@ namespace Prank_Sound_App.Core
             Extent = new ExtentReports();
             Extent.AttachReporter(_reporter);
         }
-        //public TestInitiallize()
-        //{
-        //    var ExtentSparkReports = new ExtentSparkReporter("D:\\Reports\\PrankReports");
-        //    Extent = new ExtentReports();
-        //    Extent.AttachReporter(ExtentSparkReports);
-        //}
+
 
         [SetUp]
         public void Setup()

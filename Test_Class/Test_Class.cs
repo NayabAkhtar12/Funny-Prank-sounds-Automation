@@ -5,9 +5,24 @@ using Prank_Sound_App.Pages;
 
 namespace Prank_Sound_App.Test_Class
 {
+#pragma warning disable CS8604
+
     [TestFixture]
     public class Test_Class : TestInitiallize
     {
+
+        //public Test_Class(AppiumDriver<AndroidElement> driver, ExtentTest test)
+        //{
+        //    // Ensure driver is not null
+        //    if (driver == null)
+        //    {
+        //        throw new ArgumentNullException(nameof(driver), "Driver cannot be null");
+        //    }
+
+
+        //}
+
+
         AirHorn? AirHorn;
         [Test, Order(1)]
         public void AirHornSounds()
