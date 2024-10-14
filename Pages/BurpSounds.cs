@@ -18,7 +18,7 @@ namespace Prank_Sound_App.Pages
 
         }
 
-        //Jenkins test
+
         public void BurpSoundTest()
         {
             // Scroll to Burp Sounds menu
