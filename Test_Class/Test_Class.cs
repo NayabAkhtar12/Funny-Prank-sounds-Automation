@@ -216,6 +216,16 @@ namespace Prank_Sound_App.Test_Class
             OtherSound = new OtherSounds(driver, test);
             OtherSound.OtherSoundsTest();
         }
+        PremiumandMenu? Menu;
+
+        [Test, Order(21)]
+        public void MenuTest()
+        {
+            ExtentTest test = Extent.CreateTest("OtherSounds Report");
+            Menu = new PremiumandMenu(driver, test);
+            Menu.PremiumandMenuMethod();
+        }
+
 
     }
 }
